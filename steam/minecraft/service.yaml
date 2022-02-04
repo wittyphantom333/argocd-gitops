@@ -6,9 +6,8 @@ metadata:
   labels:
     app: minecraft-server
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
     - port: 25565
-      nodePort: 30565
   selector:
     app: minecraft-server
