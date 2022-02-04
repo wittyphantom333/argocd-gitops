@@ -33,10 +33,10 @@ spec:
           protocol: TCP
         {{- if .Values.Resources }}
         resources:
-          requests:
+         - requests:
             cpu: "{{ .Values.Resources.cpuRequest }}"
             memory: "{{ .Values.Resources.memoryRequest }}"
-          limits:
+         - limits:
             cpu: "{{ .Values.Resources.cpuLimit }}"
             memory: "{{ .Values.Resources.memoryLimit }}"
         {{- end }}
