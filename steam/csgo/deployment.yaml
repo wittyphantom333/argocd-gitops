@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: csgo-deployment
+  name: csgo-deployment
+  namespace: steam-games
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: csgo-deployment
+  template:
+    metadata:
+      labels:
+        app: csgo-deployment
+    spec:
+      containers:
+      - image: srcds.azurecr.io/csgo:latest
+        name: csgo-server
+        ports:
+        - containerPort: 27015
+          protocol: UDP 
+        env:
+          - name: SRCDS_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: steam-token
+                key: SRCDS_TOKEN
+      volumeMounts:
+        - name: csgo-configuration-server-cfg
+          mountPath: /home/steam/csgo/csgo/server.cfg
+          subPath: server.cfg
+        - name: csgo-configuration-autoexec-cfg
+          mountPath: /home/steam/csgo/csgo/autoexec.cfg
+          subPath: autoexec.cfg
+          
+      volumes:
+        - name: csgo-configuration-server-cfg
+          configMap:
+            name: csgo-configuration
+            items:
+            - key: server.cfg
+              path: server.cfg
+        - name: csgo-configuration-autoexec-cfg
+          configMap:
+            name: csgo-configuration
+            items:
+            - key: autoexec.cfg
+              path: autoexec.cfg
