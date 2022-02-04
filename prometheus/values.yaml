@@ -1,0 +1,6 @@
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://git.pushingstart.com/pushingstart/argo-ve-clst-01
+    targetRevision: HEAD
