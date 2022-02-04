@@ -4,7 +4,7 @@ metadata:
   labels:
     app: valheim-deployment-svc
   name: valheim-deployment-svc
-  namespace: valheim
+  namespace: steam-games
 spec:
   ports:
   - name: port-1
