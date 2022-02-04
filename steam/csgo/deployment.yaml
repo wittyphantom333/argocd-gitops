@@ -16,7 +16,7 @@ spec:
         app: csgo-deployment
     spec:
       containers:
-      - image: srcds.azurecr.io/csgo:latest
+      - image: git.pushingstart.com/pushingstart/argo-ve-clst-01:latest
         name: csgo-server
         ports:
         - containerPort: 27015
