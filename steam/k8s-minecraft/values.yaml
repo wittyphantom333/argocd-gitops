@@ -32,13 +32,13 @@ ingress:
 SecurityContext: 1000
 
 Persistence:
-  Enabled: true
+  Enabled: false
   MountPath: "/minecraft-data/"
   VolumeName: "minecraftdata"
   # define volume claim. This is only considered if Enabled is set to true above
   # If you have an existing volume claim, add it's name in ExistingClaim 
   # A new PVC will be created if enabled is set to true and ExistingClaim is set to ""
-  ExistingClaim: ""
+  ExistingClaim: "portal-minecraft"
 #  VolumeClaimTemplates:
 #    AccessModes: ReadWriteOnce
 #    Storage: 2Gi
