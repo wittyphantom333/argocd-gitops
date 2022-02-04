@@ -27,7 +27,7 @@ spec:
               secretKeyRef:
                 name: steam-token
                 key: SRCDS_TOKEN
-      volumeMounts:
+      mounts:
         - name: csgo-configuration-server-cfg
           mountPath: /home/steam/csgo/csgo/server.cfg
           subPath: server.cfg
