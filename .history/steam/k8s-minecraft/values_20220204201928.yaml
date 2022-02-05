@@ -23,7 +23,7 @@ ingress:
   path: /
   port: "25565"
   hosts:
-    - minecraft.apps.pushingstart.com
+    - minecraft.example.com
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
@@ -38,7 +38,7 @@ Persistence:
   # define volume claim. This is only considered if Enabled is set to true above
   # If you have an existing volume claim, add it's name in ExistingClaim 
   # A new PVC will be created if enabled is set to true and ExistingClaim is set to ""
-  ExistingClaim: ""
+  ExistingClaim: "portal-minecraft"
 #  VolumeClaimTemplates:
 #    AccessModes: ReadWriteOnce
 #    Storage: 2Gi

@@ -31,7 +31,7 @@ spec:
         - name: {{ .Values.service.name }}
           containerPort: {{ .Values.service.port }}
           protocol: TCP
-        #{{- if .Values.Resources }}
+        {{- if .Values.Resources }}
         resources:
           requests:
             cpu: "{{ .Values.Resources.cpuRequest }}"
@@ -39,7 +39,7 @@ spec:
           limits:
             cpu: "{{ .Values.Resources.cpuLimit }}"
             memory: "{{ .Values.Resources.memoryLimit }}"
-        #{{- end }}
+        {{- end }}
         volumeMounts:
         - name: {{ .Values.Persistence.VolumeName }}
           mountPath: {{ .Values.Persistence.MountPath }}
