@@ -1,0 +1,10 @@
+apiVersion: apm.k8s.elastic.co/v1
+kind: ApmServer
+metadata:
+  name: ${ELK_NAME}-apm-server
+  namespace: default
+spec:
+  version: ELK_VERSION
+  count: 1
+  elasticsearchRef:
+    name: {{ .Values.elastic.name }}
