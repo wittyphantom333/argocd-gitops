@@ -1,7 +1,7 @@
 apiVersion: maps.k8s.elastic.co/v1alpha1
 kind: ElasticMapsServer
 metadata:
-  name: ve-eck-maps
+  name: ve-eck-elastic
 spec:
   version: 7.16.2
   count: 1
