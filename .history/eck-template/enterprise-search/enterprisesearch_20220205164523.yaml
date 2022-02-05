@@ -6,4 +6,4 @@ spec:
   version: 7.17.0
   count: 1
   elasticsearchRef:
-    name: elasticsearch
+    name: ve-eck-elastic
