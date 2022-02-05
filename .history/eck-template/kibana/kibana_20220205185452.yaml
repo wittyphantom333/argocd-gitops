@@ -12,4 +12,4 @@ spec:
   elasticsearchRef:
     name: elasticsearch
   enterpriseSearchRef:
-    name: enterprise-search-ent-http    
+    name: enterprise-search-ent    
