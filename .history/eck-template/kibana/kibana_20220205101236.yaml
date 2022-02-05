@@ -7,5 +7,3 @@ spec:
   count: 1
   elasticsearchRef:
     name: ve-eck-elastic
-  enterpriseSearchRef:
-    name: ve-eck-enterprise-search    
