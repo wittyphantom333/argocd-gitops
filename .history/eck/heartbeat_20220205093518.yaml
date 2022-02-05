@@ -1,0 +1,17 @@
+apiVersion: beat.k8s.elastic.co/v1beta1
+kind: Beat
+metadata:
+  name: ve-eck-heartbeat
+spec:
+  type: heartbeat
+  version: 7.18.2
+  elasticsearchRef:
+    name: ve-eck-elastic
+  configRef:
+    secretName: heartbeat-config
+  deployment:
+    podTemplate:
+      spec:
+        dnsPolicy: ClusterFirstWithHostNet
+        securityContext:
+          runAsUser: 0
