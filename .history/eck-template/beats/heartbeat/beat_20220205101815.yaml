@@ -4,7 +4,7 @@ metadata:
   name: ve-eck-heartbeat
 spec:
   type: heartbeat
-  version: 7.17.0
+  version: 7.16.2
   elasticsearchRef:
     name: ve-eck-elastic
   configRef:

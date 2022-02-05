@@ -3,7 +3,7 @@ kind: ElasticMapsServer
 metadata:
   name: ve-eck-maps
 spec:
-  version: 7.17.0
+  version: 7.16.2
   count: 1
   elasticsearchRef:
     name: ve-eck-elastic
