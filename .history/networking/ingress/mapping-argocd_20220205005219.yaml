@@ -1,0 +1,10 @@
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: argocd-backend
+spec:
+  hostname: "*"
+  prefix: /argocd/
+  service: argo-cd-1644018486-server
+  docs:
+    path: "/.ambassador-internal/openapi-docs"

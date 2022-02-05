@@ -1,0 +1,10 @@
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: kibana-backend
+spec:
+  hostname: "*"
+  prefix: /kibana/
+  service: elk-kibana
+  docs:
+    path: "/.ambassador-internal/openapi-docs"

@@ -1,0 +1,12 @@
+apiVersion: getambassador.io/v3alpha1
+kind: Listener
+metadata:
+  name: emissary-ingress-listener-443
+  namespace: emissary
+spec:
+  port: 443
+  protocol: TCP
+  securityModel: XFP
+  hostBinding:
+    namespace:
+      from: ALL
