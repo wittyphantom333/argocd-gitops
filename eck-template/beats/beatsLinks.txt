@@ -1,0 +1,4 @@
+kubectl apply -f https://raw.githubusercontent.com/elastic/cloud-on-k8s/1.9/config/recipes/beats/metricbeat_hosts.yaml
+kubectl apply -f https://raw.githubusercontent.com/elastic/cloud-on-k8s/1.9/config/recipes/beats/packetbeat_dns_http.yaml
+kubectl apply -f https://raw.githubusercontent.com/elastic/cloud-on-k8s/1.9/config/recipes/beats/journalbeat_hosts.yaml
+kubectl apply -f https://raw.githubusercontent.com/elastic/cloud-on-k8s/1.9/config/recipes/beats/auditbeat_hosts.yaml
