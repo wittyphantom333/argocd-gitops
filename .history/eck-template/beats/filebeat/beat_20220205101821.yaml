@@ -28,8 +28,6 @@ spec:
             mountPath: /var/log/pods
           - name: varlibdockercontainers
             mountPath: /var/lib/docker/containers
-          - name: elasticlogs
-            mountPath: /var/log/elasticsearch/*.log            
         volumes:
         - name: varlogcontainers
           hostPath:
@@ -40,6 +38,3 @@ spec:
         - name: varlibdockercontainers
           hostPath:
             path: /var/lib/docker/containers
-        - name: elasticlogs
-          hostPath:
-            path: /var/log/elasticsearch/*.log            
