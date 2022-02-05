@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: paper
+  labels:
+    app: azuretar-paper
+spec:
+  selector:
+    matchLabels:
+      app: azuretar-paper
+  template:
+    metadata:
+      labels:
+        app: azuretar-paper
+    spec:
+      volumes:
+        # Declare a Volume called `paper-worlds` that asks `minecraft-data-pvc` for a storage
+        - name: paper-worlds
+          persistentVolumeClaim:
+            claimName: minecraft-data-pvc
+      containers:
+      - name: paper
+        image: git.pushingstart.com:5050/public-repository/wizardly-things/paper:latest
+        imagePullPolicy: Always
+        tty: true
+        stdin: true
+        env:
+          - name: eula
+            value: "true" # Tells docker-entrypoint.sh to make the eula.txt file
+        volumeMounts:
+          - name: paper-worlds # Uses paper-worlds Volume to store the data in `/data/worlds` persistently
+            mountPath: /data/worlds
