@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: ve-eck-metricbeat
+subjects:
+- kind: ServiceAccount
+  name: ve-eck-metricbeat
+  namespace: default
+roleRef:
+  kind: ClusterRole
+  name: ve-eck-metricbeat
+  apiGroup: rbac.authorization.k8s.io
