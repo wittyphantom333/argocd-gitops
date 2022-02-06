@@ -1,0 +1,13 @@
+apiVersion: getambassador.io/v3alpha1
+kind: Host
+metadata:
+  name: argocd
+spec:
+  hostname: argocd.apps.pushingstart.com
+  acmeProvider:
+    authority: none
+  tlsSecret:
+    name: argocd-secret
+  requestPolicy:
+    insecure:
+      action: Redirect    

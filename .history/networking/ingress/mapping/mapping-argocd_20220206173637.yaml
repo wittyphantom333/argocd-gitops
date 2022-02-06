@@ -4,8 +4,8 @@ metadata:
   name: argocd-backend
   namespace: argocd
 spec:
-  hostname: "argocd"
+  hostname: "*"
   prefix: /argocd/
-  service: argocd-server
+  service: argo-cd-1644018486-server
   docs:
     path: "/.ambassador-internal/openapi-docs"
