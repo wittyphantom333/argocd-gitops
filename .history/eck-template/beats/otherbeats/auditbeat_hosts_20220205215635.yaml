@@ -4,7 +4,7 @@ metadata:
   name: ECK_NAME
 spec:
   type: auditbeat
-  version: 1.17.0
+  version: 7.17.0
   elasticsearchRef:
     name: ${ECK_NAME}-elasticsearch
   kibanaRef:

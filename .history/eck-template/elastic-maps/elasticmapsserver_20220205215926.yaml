@@ -3,7 +3,7 @@ kind: ElasticMapsServer
 metadata:
   name: wprp
 spec:
-  version: 1.17.0
+  version: 7.17.0
   count: 1
   elasticsearchRef:
     name: wprp-elasticsearch

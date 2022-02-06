@@ -4,7 +4,7 @@ metadata:
   name: wprp
 spec:
   type: filebeat
-  version: 1.17.0
+  version: 7.17.0
   elasticsearchRef:
     name: wprp-elasticsearch
   config:

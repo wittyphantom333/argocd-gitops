@@ -4,7 +4,7 @@ metadata:
   name: auditbeat
 spec:
   type: auditbeat
-  version: 1.17.0
+  version: 7.17.0
   elasticsearchRef:
     name: elastic
   kibanaRef:

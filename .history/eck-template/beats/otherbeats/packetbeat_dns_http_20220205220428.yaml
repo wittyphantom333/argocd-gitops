@@ -4,7 +4,7 @@ metadata:
   name: wppacketbeatrp
 spec:
   type: packetbeat
-  version: 1.17.0
+  version: 7.17.0
   elasticsearchRef:
     name: elasticsearch
   kibanaRef:

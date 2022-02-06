@@ -4,7 +4,7 @@ metadata:
   name: ECK_NAME
   namespace: default
 spec:
-  version: 1.17.0
+  version: 7.17.0
   count: 1
   elasticsearchRef:
     name: ${ECK_NAME}-elasticsearch
