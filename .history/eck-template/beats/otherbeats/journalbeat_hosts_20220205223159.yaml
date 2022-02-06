@@ -6,7 +6,7 @@ spec:
   type: journalbeat
   version: 7.15.0
   elasticsearchRef:
-    name: wprp
+    name: elasticsearch
   config:
     journalbeat.inputs:
     - paths: []

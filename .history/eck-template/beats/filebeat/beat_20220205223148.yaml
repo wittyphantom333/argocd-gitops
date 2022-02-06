@@ -6,7 +6,7 @@ spec:
   type: filebeat
   version: 7.17.0
   elasticsearchRef:
-    name: wprp
+    name: elasticsearch
   config:
     filebeat.inputs:
     - type: container

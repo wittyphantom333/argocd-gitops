@@ -6,9 +6,9 @@ spec:
   type: auditbeat
   version: 7.17.0
   elasticsearchRef:
-    name: wprp
+    name: elasticsearch
   kibanaRef:
-    name: wprp
+    name: kibana
   config:
     auditbeat.modules:
     - module: file_integrity

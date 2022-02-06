@@ -6,5 +6,5 @@ spec:
   version: 7.17.0
   count: 1
   elasticsearchRef:
-    name: wprp
+    name: elasticsearch
     namespace: default
