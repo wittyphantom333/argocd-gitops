@@ -1,7 +1,7 @@
 apiVersion: agent.k8s.elastic.co/v1alpha1
 kind: Agent
 metadata:
-  name: wprp
+  name: wprp-agent
 spec:
   version: 7.17.0
   elasticsearchRefs:

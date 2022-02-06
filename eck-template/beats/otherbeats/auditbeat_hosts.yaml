@@ -8,7 +8,7 @@ spec:
   elasticsearchRef:
     name: wprp
   kibanaRef:
-    name: wprp
+    name: wprp-kibana
   config:
     auditbeat.modules:
     - module: file_integrity
