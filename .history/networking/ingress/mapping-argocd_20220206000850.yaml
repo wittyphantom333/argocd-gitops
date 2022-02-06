@@ -1,11 +1,11 @@
 apiVersion: getambassador.io/v3alpha1
 kind: Mapping
 metadata:
-  name: kibana-backend
-  namespace: default
+  name: argocd-backend
+  namespace: argocd
 spec:
   hostname: "*"
-  prefix: /kibana/
-  service: wprp-kb-http
+  prefix: /argocd/
+  service: argo-cd-1644018486-server
   docs:
     path: "/.ambassador-internal/openapi-docs"
