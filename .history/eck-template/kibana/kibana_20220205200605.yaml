@@ -3,13 +3,13 @@ kind: Kibana
 metadata:
   name: ECK_NAME
 spec:
-  version: ECK_VERSION
+  version: 7.17.0
   count: 1
   http:
     service:
       spec:
         type: ClusterIP  
   elasticsearchRef:
-    name: ${ECK_NAME}-elasticsearch
+    name: elasticsearch
   enterpriseSearchRef:
-    name: ${ECK_NAME}-ent   
+    name: enterprise-search   

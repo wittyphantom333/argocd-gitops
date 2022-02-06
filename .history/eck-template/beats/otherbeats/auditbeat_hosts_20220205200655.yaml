@@ -6,9 +6,9 @@ spec:
   type: auditbeat
   version: ECK_VERSION
   elasticsearchRef:
-    name: ${ECK_NAME}-elasticsearch
+    name: elasticsearch
   kibanaRef:
-    name: ${ECK_NAME}-kibana
+    name: kibana
   config:
     auditbeat.modules:
     - module: file_integrity

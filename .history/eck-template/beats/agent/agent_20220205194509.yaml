@@ -1,11 +1,11 @@
 apiVersion: agent.k8s.elastic.co/v1alpha1
 kind: Agent
 metadata:
-  name: ECK_NAME
+  name: agent
 spec:
-  version: ECK_VERSION
+  version: 7.17.0
   elasticsearchRefs:
-  - name: ${ECK_NAME}-elasticsearch
+  - name: elasticsearch
   daemonSet: {}
   config:
     inputs:

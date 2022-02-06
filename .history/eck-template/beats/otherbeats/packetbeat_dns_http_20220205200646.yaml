@@ -6,9 +6,9 @@ spec:
   type: packetbeat
   version: ECK_VERSION
   elasticsearchRef:
-    name: ${ECK_NAME}-elasticsearch
+    name: elasticsearch
   kibanaRef:
-    name: ${ECK_NAME}-kibana
+    name: kibana
   config:
     packetbeat.interfaces.device: any
     packetbeat.protocols:

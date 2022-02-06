@@ -10,6 +10,6 @@ spec:
       spec:
         type: ClusterIP  
   elasticsearchRef:
-    name: ${ECK_NAME}-elasticsearch
+    name: elasticsearch
   enterpriseSearchRef:
-    name: ${ECK_NAME}-ent   
+    name: enterprise-search   

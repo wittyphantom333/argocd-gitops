@@ -3,9 +3,9 @@ kind: Agent
 metadata:
   name: ECK_NAME
 spec:
-  version: ECK_VERSION
+  version: 7.17.0
   elasticsearchRefs:
-  - name: ${ECK_NAME}-elasticsearch
+  - name: elasticsearch
   daemonSet: {}
   config:
     inputs:

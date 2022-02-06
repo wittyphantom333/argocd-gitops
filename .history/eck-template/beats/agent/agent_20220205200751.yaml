@@ -5,7 +5,7 @@ metadata:
 spec:
   version: ECK_VERSION
   elasticsearchRefs:
-  - name: ${ECK_NAME}-elasticsearch
+  - name: elasticsearch
   daemonSet: {}
   config:
     inputs:

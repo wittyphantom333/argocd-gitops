@@ -4,9 +4,9 @@ metadata:
   name: ECK_NAME
 spec:
   type: heartbeat
-  version: ECK_VERSION
+  version: 7.17.0
   elasticsearchRef:
-    name: ${ECK_NAME}-elasticsearch
+    name: elasticsearch
   configRef:
     secretName: heartbeat-config
   deployment:

@@ -6,7 +6,7 @@ spec:
   type: filebeat
   version: ECK_VERSION
   elasticsearchRef:
-    name: ${ECK_NAME}-elasticsearch
+    name: elasticsearch
   config:
     filebeat.inputs:
     - type: container

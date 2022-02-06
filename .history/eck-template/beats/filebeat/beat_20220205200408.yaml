@@ -4,9 +4,9 @@ metadata:
   name: ECK_NAME
 spec:
   type: filebeat
-  version: ECK_VERSION
+  version: 7.17.0
   elasticsearchRef:
-    name: ${ECK_NAME}-elasticsearch
+    name: elasticsearch
   config:
     filebeat.inputs:
     - type: container

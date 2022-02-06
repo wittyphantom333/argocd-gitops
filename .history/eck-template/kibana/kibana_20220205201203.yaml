@@ -12,4 +12,4 @@ spec:
   elasticsearchRef:
     name: ${ECK_NAME}-elasticsearch
   enterpriseSearchRef:
-    name: ${ECK_NAME}-ent   
+    name: enterprise-search   

@@ -6,5 +6,5 @@ spec:
   version: ECK_VERSION
   count: 1
   elasticsearchRef:
-    name: ${ECK_NAME}-elasticsearch
+    name: elasticsearch
     namespace: default

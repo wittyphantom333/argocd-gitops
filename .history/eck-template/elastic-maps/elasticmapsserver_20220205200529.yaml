@@ -3,8 +3,8 @@ kind: ElasticMapsServer
 metadata:
   name: ECK_NAME
 spec:
-  version: ECK_VERSION
+  version: 7.17.0
   count: 1
   elasticsearchRef:
-    name: ${ECK_NAME}-elasticsearch
+    name: elasticsearch
     namespace: default
