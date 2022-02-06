@@ -1,0 +1,30 @@
+apiVersion: elasticsearch.k8s.elastic.co/v1
+kind: Elasticsearch
+metadata:
+  name: wprp-elastic
+spec:
+  version: 7.17.0
+  volumeClaimDeletePolicy: DeleteOnScaledownOnly
+  nodeSets:
+  - name: default
+    count: 5
+    podTemplate:
+      spec:
+        initContainers:
+        - name: sysctl
+          securityContext:
+            privileged: true
+          command: ['sh', '-c', 'sysctl -w vm.max_map_count=262144']    
+    volumeClaimTemplates:
+    - metadata:
+        name: elasticsearch-data # Do not change this name unless you set up a volume mount for the data path.
+      spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: 50Gi
+        storageClassName: standard    
+    config:
+      node.store.allow_mmap: false
+      xpack.monitoring.collection.enabled: true

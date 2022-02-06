@@ -1,0 +1,9 @@
+apiVersion: enterprisesearch.k8s.elastic.co/v1
+kind: EnterpriseSearch
+metadata:
+  name: wprp-ent
+spec:
+  version: 7.17.0
+  count: 3
+  elasticsearchRef:
+    name: wprp-elastic
