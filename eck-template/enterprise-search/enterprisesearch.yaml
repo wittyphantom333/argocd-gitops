@@ -4,6 +4,6 @@ metadata:
   name: wprp-ent
 spec:
   version: 7.17.0
-  count: 1
+  count: 3
   elasticsearchRef:
-    name: wprp
+    name: wprp-elastic

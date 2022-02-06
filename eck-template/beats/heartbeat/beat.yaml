@@ -6,7 +6,7 @@ spec:
   type: heartbeat
   version: 7.17.0
   elasticsearchRef:
-    name: wprp
+    name: wprp-elastic
   configRef:
     secretName: heartbeat-config
   deployment:
