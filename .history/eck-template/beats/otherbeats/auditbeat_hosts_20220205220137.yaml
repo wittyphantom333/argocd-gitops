@@ -1,12 +1,12 @@
 apiVersion: beat.k8s.elastic.co/v1beta1
 kind: Beat
 metadata:
-  name: auditbeat
+  name: wprp
 spec:
   type: auditbeat
   version: 1.17.0
   elasticsearchRef:
-    name: elasticsearch
+    name: elastic
   kibanaRef:
     name: kibana
   config:

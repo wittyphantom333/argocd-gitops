@@ -1,12 +1,12 @@
 apiVersion: beat.k8s.elastic.co/v1beta1
 kind: Beat
 metadata:
-  name: heartbeat
+  name: ECK_NAME
 spec:
   type: heartbeat
   version: 1.17.0
   elasticsearchRef:
-    name: elasticsearch
+    name: wprp-elasticsearch
   configRef:
     secretName: heartbeat-config
   deployment:

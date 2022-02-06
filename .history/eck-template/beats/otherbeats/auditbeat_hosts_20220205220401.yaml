@@ -6,7 +6,7 @@ spec:
   type: auditbeat
   version: 1.17.0
   elasticsearchRef:
-    name: elasticsearch
+    name: elastic
   kibanaRef:
     name: kibana
   config:

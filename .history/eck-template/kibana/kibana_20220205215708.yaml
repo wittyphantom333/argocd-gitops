@@ -1,7 +1,7 @@
 apiVersion: kibana.k8s.elastic.co/v1
 kind: Kibana
 metadata:
-  name: kibana
+  name: ECK_NAME
 spec:
   version: 1.17.0
   count: 1
@@ -10,6 +10,6 @@ spec:
       spec:
         type: ClusterIP  
   elasticsearchRef:
-    name: elasticsearch
+    name: ${ECK_NAME}-elasticsearch
   enterpriseSearchRef:
-    name: ent-search
+    name: ${ECK_NAME}-ent   

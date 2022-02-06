@@ -1,12 +1,12 @@
 apiVersion: beat.k8s.elastic.co/v1beta1
 kind: Beat
 metadata:
-  name: filebeat
+  name: ECK_NAME
 spec:
   type: filebeat
   version: 1.17.0
   elasticsearchRef:
-    name: elasticsearch
+    name: ${ECK_NAME}-elasticsearch
   config:
     filebeat.inputs:
     - type: container

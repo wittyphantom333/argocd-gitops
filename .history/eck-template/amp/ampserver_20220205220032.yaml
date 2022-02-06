@@ -1,10 +1,10 @@
 apiVersion: apm.k8s.elastic.co/v1
 kind: ApmServer
 metadata:
-  name: apm
+  name: wprp
   namespace: default
 spec:
   version: 1.17.0
   count: 1
   elasticsearchRef:
-    name: elasticsearch
+    name: wprp

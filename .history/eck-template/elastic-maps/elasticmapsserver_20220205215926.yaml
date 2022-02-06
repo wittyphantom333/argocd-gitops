@@ -1,10 +1,10 @@
 apiVersion: maps.k8s.elastic.co/v1alpha1
 kind: ElasticMapsServer
 metadata:
-  name: eps
+  name: wprp
 spec:
   version: 1.17.0
   count: 1
   elasticsearchRef:
-    name: elasticsearch
+    name: wprp-elasticsearch
     namespace: default

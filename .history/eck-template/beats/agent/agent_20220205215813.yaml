@@ -1,11 +1,11 @@
 apiVersion: agent.k8s.elastic.co/v1alpha1
 kind: Agent
 metadata:
-  name: agent
+  name: wprp
 spec:
   version: 1.17.0
   elasticsearchRefs:
-  - name: elasticsearch
+  - name: ${ECK_NAME}-elasticsearch
   daemonSet: {}
   config:
     inputs:
