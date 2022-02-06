@@ -1,12 +1,12 @@
 apiVersion: getambassador.io/v3alpha1
 kind: Listener
 metadata:
-  name: emissary-ingress-listener-5601
-  namespace: emissary 
+  name: emissary-ingress-listener-8080
+  namespace: emissary
 spec:
-  port: 5601
-  protocol: HTTPS
+  port: 8080
+  protocol: HTTP
   securityModel: XFP
   hostBinding:
     namespace:
-      from: SELF
+      from: ALL
