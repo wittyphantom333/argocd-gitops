@@ -14,5 +14,4 @@ spec:
   enterpriseSearchRef:
     name: wprp-ent
   config:
-     newsfeed.enabled: false
-     server.publicBaseUrl: "https://apps.pushingstart.com/kibana/"    
+     newsfeed.enabled: false    
