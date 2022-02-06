@@ -1,0 +1,17 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: ems-data-setup
+spec:
+  terminationGracePeriodSeconds: 0
+  volumes:
+    - name: ems-storage
+      persistentVolumeClaim:
+       claimName: ems-basemap
+  containers:
+    - name: ems-setup
+      image: ubuntu
+      command: [bash, -c, "apt-get update && apt-get install unzip && while true; do sleep 10; done"]
+      volumeMounts:
+        - mountPath: "/usr/share/planet"
+          name: ems-storage
