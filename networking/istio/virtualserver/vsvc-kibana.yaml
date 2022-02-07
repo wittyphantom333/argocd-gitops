@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: grafana
+  name: kibana
 spec:
   hosts:
   - "apps.pushingstart.com"
@@ -10,9 +10,9 @@ spec:
   http:
   - match:
     - uri:
-        prefix: /grafana
+        prefix: /kibana
     route:
     - destination:
         port:
-          number: 80
-        host: kube-prometheus-stack-1644158290-grafana
+          number: 5601
+        host: wprp-kibana-kb-http
