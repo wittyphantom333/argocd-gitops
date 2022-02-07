@@ -4,7 +4,7 @@ metadata:
   name: kibana-backend
   namespace: default
 spec:
-  hostname: "apps.pushingstart.com"
+  hostname: "*"
   prefix: /kibana/
   service: wprp-kb-http
   docs:
