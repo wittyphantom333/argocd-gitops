@@ -3,13 +3,13 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: istio
-  name: argocd
+  name: grafana
 spec:
   rules:
   - host: "apps.pushingstart.com"
     http:
       paths:
-      - path: /argocd/*
+      - path: /grafana/*
         backend:
-          serviceName: argocd-server
-          servicePort: 443
+          serviceName: kube-prometheus-stack-1644158290-grafana
+          servicePort: 80
