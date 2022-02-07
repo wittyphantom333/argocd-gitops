@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: grafana
+spec:
+  hosts:
+  - "apps.pushingstart.com"
+  gateways:
+  - apps-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /grafana
+    route:
+    - destination:
+        port:
+          number: 80
+        host: kube-prometheus-stack-1644158290-grafana
