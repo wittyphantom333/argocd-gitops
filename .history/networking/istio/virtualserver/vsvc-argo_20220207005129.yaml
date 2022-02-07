@@ -1,18 +1,18 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: grafana
+  name: argocd
 spec:
   hosts:
   - "apps.pushingstart.com"
   gateways:
-  - http-gateway
+  - https-gateway
   http:
   - match:
     - uri:
-        prefix: /grafana
+        prefix: /argocd
     route:
     - destination:
         port:
           number: 80
-        host: kube-prometheus-stack-1644158290-grafana
+        host: argocd-server

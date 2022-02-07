@@ -6,7 +6,7 @@ spec:
   hosts:
   - "apps.pushingstart.com"
   gateways:
-  - http-gateway
+  - apps-gateway
   http:
   - match:
     - uri:
