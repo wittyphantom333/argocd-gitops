@@ -15,5 +15,5 @@ spec:
     name: wprp-ent
   config:
      newsfeed.enabled: false
-     server.publicBaseUrl: https://apps.pushingstart.com
-     server.basePath: /kibana
+     #server.publicBaseUrl: https://apps.pushingstart.com
+     #server.basePath: /kibana
