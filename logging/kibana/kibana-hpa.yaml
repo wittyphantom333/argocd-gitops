@@ -4,15 +4,13 @@ metadata:
   name: kibana
 spec:
   scaleTargetRef:
-    apiVersion: kibana.k8s.elastic.co/v1
     kind: Kibana
-    name: kibana
+    name: istiod
+    apiVersion: apps/v1
   minReplicas: 1
-  maxReplicas: 4
+  maxReplicas: 5
   metrics:
     - type: Resource
       resource:
         name: cpu
-        target:
-          type: Utilization
-          averageUtilization: 50
+        targetAverageUtilization: 80
