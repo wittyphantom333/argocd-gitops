@@ -7,7 +7,7 @@ spec:
   podTemplate:
     spec:
       containers:
-      - name: ent
+      - name: enterprise-search
         resources:
           requests:
             memory: 4Gi
