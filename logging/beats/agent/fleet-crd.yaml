@@ -9,12 +9,12 @@ spec:
   fleetServerRef: 
     name: fleet-server
   mode: fleet
-  daemonSet:
-    podTemplate:
-      spec:
-        serviceAccountName: elastic-agent
-        hostNetwork: true
-        dnsPolicy: ClusterFirstWithHostNet
-        automountServiceAccountToken: true
-        securityContext:
-          runAsUser: 0
+daemonSet:
+  podTemplate:
+    spec:
+      serviceAccountName: elastic-agent
+      hostNetwork: true
+      dnsPolicy: ClusterFirstWithHostNet
+      automountServiceAccountToken: true
+      securityContext:
+        runAsUser: 0
