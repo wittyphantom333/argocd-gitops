@@ -4,20 +4,6 @@ metadata:
   name: kibana
 spec:
   version: 7.17.0
-  podTemplate:
-    spec:
-      containers:
-      - name: kibana
-        env:
-          - name: NODE_OPTIONS
-            value: "--max-old-space-size=2048"
-        resources:
-          requests:
-            memory: 4Gi
-            cpu: 2
-          limits:
-            memory: 4Gi
-            cpu: 4  
   count: 1
   http:
     service:
