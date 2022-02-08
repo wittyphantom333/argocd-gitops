@@ -1,13 +1,13 @@
 apiVersion: enterprisesearch.k8s.elastic.co/v1
 kind: EnterpriseSearch
 metadata:
-  name: wprp-ent
+  name: ent
 spec:
   version: 7.17.0
   podTemplate:
     spec:
       containers:
-      - name: wprp-ent
+      - name: ent
         resources:
           requests:
             memory: 4Gi
@@ -20,4 +20,4 @@ spec:
           value: -Xms3500m -Xmx3500m  
   count: 2
   elasticsearchRef:
-    name: wprp-elastic
+    name: elasticsearch

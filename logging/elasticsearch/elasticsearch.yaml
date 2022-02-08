@@ -1,7 +1,7 @@
 apiVersion: elasticsearch.k8s.elastic.co/v1
 kind: Elasticsearch
 metadata:
-  name: wprp-elastic
+  name: elasticsearch
 spec:
   version: 7.17.0
   volumeClaimDeletePolicy: DeleteOnScaledownOnly
@@ -11,7 +11,7 @@ spec:
     podTemplate:
       spec:
         containers:
-        - name: wprp-elastic
+        - name: elasticsearch
           env:
           - name: ES_JAVA_OPTS
             value: -Xms2g -Xmx2g

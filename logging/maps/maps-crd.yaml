@@ -1,0 +1,24 @@
+apiVersion: maps.k8s.elastic.co/v1alpha1
+kind: ElasticMapsServer
+metadata:
+  name: ems
+spec:
+  version: 7.17.0
+  podTemplate:
+    spec:
+      containers:
+      - name: maps
+        env:
+          - name: NODE_OPTIONS
+            value: "--max-old-space-size=980"
+        resources:
+          requests:
+            memory: 2Gi
+            cpu: 2
+          limits:
+            memory: 2Gi
+            cpu: 2  
+  count: 3
+  elasticsearchRef:
+    name: elasticsearch
+    namespace: default
