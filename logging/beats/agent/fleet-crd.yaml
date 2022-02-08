@@ -14,7 +14,7 @@ spec:
     replicas: 1
     podTemplate:
       spec:
-        serviceAccountName: fleet-server
+        serviceAccountName: elastic-agent
         automountServiceAccountToken: true
         securityContext:
           runAsUser: 0
