@@ -1,14 +1,14 @@
 apiVersion: beat.k8s.elastic.co/v1beta1
 kind: Beat
 metadata:
-  name: wprp-pb
+  name: pb
 spec:
   type: packetbeat
   version: 7.17.0
   elasticsearchRef:
-    name: wprp-elastic
+    name: elasticsearch
   kibanaRef:
-    name: wprp-kibana
+    name: kibana
   config:
     packetbeat.interfaces.device: any
     packetbeat.protocols:

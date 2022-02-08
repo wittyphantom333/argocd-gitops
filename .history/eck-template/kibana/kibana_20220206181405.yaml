@@ -1,7 +1,7 @@
 apiVersion: kibana.k8s.elastic.co/v1
 kind: Kibana
 metadata:
-  name: wprp-kibana
+  name: kibana
 spec:
   version: 7.17.0
   count: 1
@@ -10,9 +10,9 @@ spec:
       spec:
         type: ClusterIP  
   elasticsearchRef:
-    name: wprp-elastic
+    name: elasticsearch
   enterpriseSearchRef:
-    name: wprp-ent
+    name: ent
   config:
      newsfeed.enabled: false
      server.publicBaseUrl: "https://apps.pushingstart.com/kibana/"    

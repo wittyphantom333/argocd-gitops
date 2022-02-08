@@ -7,7 +7,7 @@ spec:
   acmeProvider:
     authority: none
   tlsSecret:
-    name: wprp-kibana-kb-http-ca-internal
+    name: kibana-kb-http-ca-internal
   requestPolicy:
     insecure:
       action: Redirect    

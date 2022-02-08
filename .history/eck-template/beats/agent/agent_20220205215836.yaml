@@ -5,7 +5,7 @@ metadata:
 spec:
   version: 7.17.0
   elasticsearchRefs:
-  - name: wprp-elasticsearch
+  - name: elasticsearchsearch
   daemonSet: {}
   config:
     inputs:

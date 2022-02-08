@@ -6,6 +6,6 @@ metadata:
 spec:
   hostname: "*"
   prefix: /kibana/
-  service: wprp-kb-http:5601
+  service: kb-http:5601
   docs:
     path: "/.ambassador-internal/openapi-docs"

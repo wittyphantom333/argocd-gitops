@@ -15,4 +15,4 @@ spec:
     - destination:
         port:
           number: 5601
-        host: wprp-kibana-kb-http
+        host: kibana-kb-http

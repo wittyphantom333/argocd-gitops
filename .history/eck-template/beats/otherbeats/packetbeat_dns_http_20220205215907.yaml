@@ -6,9 +6,9 @@ spec:
   type: packetbeat
   version: 7.17.0
   elasticsearchRef:
-    name: wprp-elasticsearch
+    name: elasticsearchsearch
   kibanaRef:
-    name: wprp-kibana
+    name: kibana
   config:
     packetbeat.interfaces.device: any
     packetbeat.protocols:

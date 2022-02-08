@@ -6,6 +6,6 @@ metadata:
 spec:
   hostname: "apps.pushingstart.com"
   prefix: /kibana/
-  service: wprp-kb-http
+  service: kb-http
   docs:
     path: "/.ambassador-internal/openapi-docs"
