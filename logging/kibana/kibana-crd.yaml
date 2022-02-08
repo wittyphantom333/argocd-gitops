@@ -26,7 +26,7 @@ spec:
   elasticsearchRef:
     name: elasticsearch
   enterpriseSearchRef:
-    name: ent
+    name: enterprise-search
   config:
     newsfeed.enabled: false
     xpack.fleet.agents.elasticsearch.host: "https://elasticsearch-es-http.default.svc:9200"

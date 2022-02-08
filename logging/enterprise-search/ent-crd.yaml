@@ -1,7 +1,7 @@
 apiVersion: enterprisesearch.k8s.elastic.co/v1
 kind: EnterpriseSearch
 metadata:
-  name: ent
+  name: enterprise-search
 spec:
   version: 7.17.0
   podTemplate:
