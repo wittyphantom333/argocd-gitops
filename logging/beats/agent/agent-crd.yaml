@@ -8,8 +8,6 @@ metadata:
 spec:
   kibanaRef:
     name: kibana
-  elasticsearchRefs:
-  - name: elasticsearch
   selector:
     matchLabels:
       app: elastic-agent
