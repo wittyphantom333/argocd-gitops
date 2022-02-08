@@ -6,8 +6,6 @@ metadata:
   labels:
     app: elastic-agent
 spec:
-  kibanaRef:
-    name: kibana
   selector:
     matchLabels:
       app: elastic-agent
