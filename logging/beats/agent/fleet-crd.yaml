@@ -1,7 +1,7 @@
 apiVersion: agent.k8s.elastic.co/v1alpha1
 kind: Agent
 metadata: 
-  name: elastic-agent
+  name: fleet-server
 spec:
   version: 7.17.0
   kibanaRef:
@@ -12,7 +12,7 @@ spec:
   daemonSet:
     podTemplate:
       spec:
-        serviceAccountName: elastic-agent
+        serviceAccountName: fleet-server
         hostNetwork: true
         dnsPolicy: ClusterFirstWithHostNet
         automountServiceAccountToken: true
