@@ -5,10 +5,10 @@ metadata:
 spec:
   scaleTargetRef:
     kind: Kibana
-    name: istiod
+    name: kibana
     apiVersion: apps/v1
   minReplicas: 1
-  maxReplicas: 5
+  maxReplicas: 4
   metrics:
     - type: Resource
       resource:
