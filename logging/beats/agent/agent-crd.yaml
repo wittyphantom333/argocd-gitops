@@ -31,12 +31,12 @@ spec:
               value: "true"
               # The ip:port pair of fleet server
             - name: FLEET_URL
-              value: "http://fleet-server:8220"
+              value: "https://fleet-server:8220"
               # If left empty KIBANA_HOST, KIBANA_FLEET_USERNAME, KIBANA_FLEET_PASSWORD are needed
             - name: FLEET_ENROLLMENT_TOKEN
               value: ""
             - name: KIBANA_HOST
-              value: "https://kibana:5601"
+              value: "http://kibana:5601"
             - name: KIBANA_FLEET_USERNAME
               value: "elastic"
             - name: KIBANA_FLEET_PASSWORD
