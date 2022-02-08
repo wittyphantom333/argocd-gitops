@@ -2,12 +2,19 @@ apiVersion: agent.k8s.elastic.co/v1alpha1
 kind: Agent
 metadata:
   name: fleet-server
-  namespace: kube-system
 spec:
-  version: 7.17.0
+  version: 7.17.0 # should be bumped to 7.15.1 once released, see https://github.com/elastic/cloud-on-k8s/pull/4873#issuecomment-930247845
   kibanaRef:
     name: kibana
   elasticsearchRefs:
   - name: elasticsearch
   mode: fleet
-  fleetServerEnabled: true        
+  fleetServerEnabled: true
+  deployment:
+    replicas: 1
+    podTemplate:
+      spec:
+        serviceAccountName: fleet-server
+        automountServiceAccountToken: true
+        securityContext:
+          runAsUser: 0
