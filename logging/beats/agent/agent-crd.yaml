@@ -34,13 +34,13 @@ spec:
               value: "https://fleet-server:8220"
               # If left empty KIBANA_HOST, KIBANA_FLEET_USERNAME, KIBANA_FLEET_PASSWORD are needed
             - name: FLEET_ENROLLMENT_TOKEN
-              value: ""
+              value: "cHR6bDJuNEJFcEdpdXdkakdGcGk6cEpiZERiZHVRVm15TXIzbUZWX0ZIQQ=="
             - name: KIBANA_HOST
               value: "http://kibana:5601"
             - name: KIBANA_FLEET_USERNAME
               value: "elastic"
             - name: KIBANA_FLEET_PASSWORD
-              value: "G84Z3Z97lr0PNheKXY51dA32"
+              value: "changeme"
             - name: NODE_NAME
               valueFrom:
                 fieldRef:
