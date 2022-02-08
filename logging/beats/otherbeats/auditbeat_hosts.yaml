@@ -1,7 +1,7 @@
 apiVersion: beat.k8s.elastic.co/v1beta1
 kind: Beat
 metadata:
-  name: ab
+  name: auditbeat
 spec:
   type: auditbeat
   version: 7.17.0
