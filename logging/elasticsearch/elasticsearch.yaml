@@ -10,15 +10,17 @@ spec:
     count: 5
     podTemplate:
       spec:
-        initContainers:
-        - name: sysctl
-          resources: # override the default resources set by the operator
-            limits:
-              cpu: 2000m
-              memory: 4096Mi
+        containers:
+        - name: wprp-elastic
+          env:
+          - name: ES_JAVA_OPTS
+            value: -Xms2g -Xmx2g
+          resources:
             requests:
-              cpu: 1000m
-              memory: 2048Mi
+              memory: 4Gi
+              cpu: 4
+            limits:
+              memory: 4Gi
           securityContext:
             privileged: true
           command: ['sh', '-c', 'sysctl -w vm.max_map_count=262144']    

@@ -4,6 +4,20 @@ metadata:
   name: wprp-ent
 spec:
   version: 7.17.0
-  count: 3
+  podTemplate:
+    spec:
+      containers:
+      - name: wprp-ent
+        resources:
+          requests:
+            memory: 4Gi
+            cpu: 1
+          limits:
+            memory: 4Gi
+            cpu: 2
+        env:
+        - name: JAVA_OPTS
+          value: -Xms3500m -Xmx3500m  
+  count: 2
   elasticsearchRef:
     name: wprp-elastic
