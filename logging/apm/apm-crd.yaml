@@ -1,7 +1,7 @@
 apiVersion: apm.k8s.elastic.co/v1
 kind: ApmServer
 metadata:
-  name: apm-server
+  name: apm
   namespace: default
 spec:
   version: 7.17.0
@@ -11,7 +11,7 @@ spec:
   podTemplate:
     spec:
       containers:
-      - name: apm-server
+      - name: apm
         resources:
           requests:
             memory: 1Gi
