@@ -10,29 +10,3 @@ spec:
   fleetServerRef:
     name: fleet-server
   mode: fleet
-  daemonSet:
-    podTemplate:
-      spec:
-        serviceAccountName: elastic-agent
-        automountServiceAccountToken: true
-        securityContext:
-          runAsUser: 0
-        containers:
-        - name: elastic-agent
-          volumeMounts:
-          - mountPath: /var/lib/docker/containers
-            name: varlibdockercontainers
-          - mountPath: /var/log/containers
-            name: varlogcontainers
-          - mountPath: /var/log/pods
-            name: varlogpods
-        volumes:
-        - name: varlibdockercontainers
-          hostPath:
-            path: /var/lib/docker/containers
-        - name: varlogcontainers
-          hostPath:
-            path: /var/log/containers
-        - name: varlogpods
-          hostPath:
-            path: /var/log/pods        
