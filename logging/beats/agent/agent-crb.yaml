@@ -3,9 +3,9 @@ kind: ClusterRoleBinding
 metadata:
   name: elastic-agent
 subjects:
-  - kind: ServiceAccount
-    name: elastic-agent
-    namespace: kube-system
+- kind: ServiceAccount
+  name: elastic-agent
+  namespace: default
 roleRef:
   kind: ClusterRole
   name: elastic-agent
