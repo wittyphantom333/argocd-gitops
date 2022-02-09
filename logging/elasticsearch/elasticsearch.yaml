@@ -1,4 +1,3 @@
----
 apiVersion: elasticsearch.k8s.elastic.co/v1
 kind: Elasticsearch
 metadata:
@@ -17,8 +16,8 @@ metadata:
               "resources": {
                   "nodeCount": { "min": 3, "max": 8 },
                   "cpu": { "min": 2, "max": 8 },
-                  "memory": { "min": "2Gi", "max": "16Gi" },
-                  "storage": { "min": "64Gi", "max": "512Gi" }
+                  "memory": { "min": "2Gi", "max": "4Gi" },
+                  "storage": { "min": "25Gi", "max": "75Gi" }
               }
           },
           {
@@ -30,7 +29,7 @@ metadata:
                   }
               },
               "resources": {
-                  "nodeCount": { "min": 1, "max": 9 },
+                  "nodeCount": { "min": 1, "max": 5 },
                   "cpu": { "min": 1, "max": 4 },
                   "memory": { "min": "2Gi", "max": "8Gi" }
               }
