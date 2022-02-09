@@ -1,32 +1,60 @@
 apiVersion: elasticsearch.k8s.elastic.co/v1
 kind: Elasticsearch
 metadata:
-  name: elasticsearch
+  name: autoscaling-sample
+  annotations:
+    elasticsearch.alpha.elastic.co/autoscaling-spec: |
+      {
+          "policies": [{
+              "name": "di",
+              "roles": ["data", "ingest" , "transform"],
+              "deciders": {
+                "proactive_storage": {
+                    "forecast_window": "5m"
+                }
+              },
+              "resources": {
+                  "nodeCount": { "min": 3, "max": 8 },
+                  "cpu": { "min": 2, "max": 8 },
+                  "memory": { "min": "2Gi", "max": "16Gi" },
+                  "storage": { "min": "64Gi", "max": "512Gi" }
+              }
+          },
+          {
+              "name": "ml",
+              "roles": ["ml"],
+              "deciders": {
+                  "ml": {
+                      "down_scale_delay": "10m"
+                  }
+              },
+              "resources": {
+                  "nodeCount": { "min": 1, "max": 9 },
+                  "cpu": { "min": 1, "max": 4 },
+                  "memory": { "min": "2Gi", "max": "8Gi" }
+              }
+          }]
+      }
 spec:
-  version: 7.17.0
-  volumeClaimDeletePolicy: DeleteOnScaledownOnly
+  version: 7.15.0
   nodeSets:
-  - name: default
-    count: 5
-    podTemplate:
-      spec:
-        initContainers:
-        - name: sysctl
-          securityContext:
-            privileged: true
-          command: ['sh', '-c', 'sysctl -w vm.max_map_count=262144']         
-        containers:
-        - name: elasticsearch
-          env:
-          - name: ES_JAVA_OPTS
-            value: -Xms2g -Xmx2g
-          resources:
-            requests:
-              memory: 4Gi
-              cpu: 4
-            limits:
-              memory: 4Gi  
-    volumeClaimTemplates:
+    - name: master
+      count: 1
+      config:
+        node:
+          roles: [ "master" ]
+          store.allow_mmap: false
+    - name: di
+      config:
+        node:
+          roles: [ "data", "ingest", "transform" ]
+          store.allow_mmap: false
+    - name: ml
+      config:
+        node:
+          roles: [ "ml" ]
+          store.allow_mmap: false 
+      volumeClaimTemplates:
     - metadata:
         name: elasticsearch-data # Do not change this name unless you set up a volume mount for the data path.
       spec:
@@ -36,6 +64,7 @@ spec:
           requests:
             storage: 50Gi
         storageClassName: standard    
+  volumeClaimDeletePolicy: DeleteOnScaledownOnly
     config:
       node.store.allow_mmap: false
       xpack.monitoring.collection.enabled: true
