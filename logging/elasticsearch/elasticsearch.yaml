@@ -44,16 +44,19 @@ spec:
         node:
           roles: [ "master" ]
           store.allow_mmap: false
+          xpack.monitoring.collection.enabled: true
     - name: di
       config:
         node:
           roles: [ "data", "ingest", "transform" ]
           store.allow_mmap: false
+          xpack.monitoring.collection.enabled: true
     - name: ml
       config:
         node:
           roles: [ "ml" ]
           store.allow_mmap: false
+          xpack.monitoring.collection.enabled: true
       volumeClaimTemplates:
     - metadata:
         name: elasticsearch-data # Do not change this name unless you set up a volume mount for the data path.
@@ -63,7 +66,4 @@ spec:
         resources:
           requests:
             storage: 50Gi
-        storageClassName: standard    
-    config:
-      node.store.allow_mmap: false
-      xpack.monitoring.collection.enabled: true
+        storageClassName: standard
