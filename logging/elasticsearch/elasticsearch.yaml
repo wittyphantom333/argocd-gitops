@@ -37,6 +37,7 @@ metadata:
       }
 spec:
   version: 7.15.0
+  volumeClaimDeletePolicy: DeleteOnScaledownOnly  
   nodeSets:
     - name: master
       count: 1
@@ -64,7 +65,6 @@ spec:
           requests:
             storage: 50Gi
         storageClassName: standard    
-  volumeClaimDeletePolicy: DeleteOnScaledownOnly
     config:
       node.store.allow_mmap: false
       xpack.monitoring.collection.enabled: true
