@@ -3,10 +3,14 @@ kind: ClusterRole
 metadata:
   name: elastic-agent
 rules:
-- apiGroups: [""] # "" indicates the core API group
+- apiGroups: [""]
   resources:
   - pods
   - nodes
+  - namespaces
+  - events
+  - services
+  - configmaps
   verbs:
   - get
   - watch
@@ -18,3 +22,38 @@ rules:
   - get
   - create
   - update
+- nonResourceURLs:
+  - "/metrics"
+  verbs:
+  - get
+- apiGroups: ["extensions"]
+  resources:
+    - replicasets
+  verbs: 
+  - "get"
+  - "list"
+  - "watch"
+- apiGroups:
+  - "apps"
+  resources:
+  - statefulsets
+  - deployments
+  - replicasets
+  verbs:
+  - "get"
+  - "list"
+  - "watch"
+- apiGroups:
+  - ""
+  resources:
+  - nodes/stats
+  verbs:
+  - get
+- apiGroups:
+  - "batch"
+  resources:
+  - jobs
+  verbs:
+  - "get"
+  - "list"
+  - "watch"
