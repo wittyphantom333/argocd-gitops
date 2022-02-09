@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
+replicas: 1
 metadata:
   name: paper
   labels:
     app: paper
 spec:
-  count: 3
   selector:
     matchLabels:
       app: paper
