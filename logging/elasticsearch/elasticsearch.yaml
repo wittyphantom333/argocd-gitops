@@ -2,7 +2,7 @@ apiVersion: elasticsearch.k8s.elastic.co/v1
 kind: Elasticsearch
 metadata:
   name: elasticsearch
-  annotations:
+   annotations:
     elasticsearch.alpha.elastic.co/autoscaling-spec: |
       {
           "policies": [{
@@ -37,10 +37,9 @@ metadata:
       }
 spec:
   version: 7.17.0
-  volumeClaimDeletePolicy: DeleteOnScaledownOnly  
   nodeSets:
     - name: master
-      count: 3
+      count: 1
       config:
         node:
           roles: [ "master" ]
@@ -54,7 +53,7 @@ spec:
       config:
         node:
           roles: [ "ml" ]
-          store.allow_mmap: false 
+          store.allow_mmap: false
       volumeClaimTemplates:
     - metadata:
         name: elasticsearch-data # Do not change this name unless you set up a volume mount for the data path.
