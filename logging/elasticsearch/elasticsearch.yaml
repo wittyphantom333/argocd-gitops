@@ -8,7 +8,7 @@ metadata:
       {
           "policies": [{
               "name": "di",
-              "roles": ["data", "ingest" , "transform"],
+              "roles": ["data", "ingest" , "transform", "remote_cluster_client"],
               "deciders": {
                 "proactive_storage": {
                     "forecast_window": "5m"
