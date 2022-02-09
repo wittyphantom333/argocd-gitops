@@ -1,7 +1,7 @@
 apiVersion: elasticsearch.k8s.elastic.co/v1
 kind: Elasticsearch
 metadata:
-  name: autoscaling-sample
+  name: elasticsearch
   annotations:
     elasticsearch.alpha.elastic.co/autoscaling-spec: |
       {
@@ -36,11 +36,11 @@ metadata:
           }]
       }
 spec:
-  version: 7.15.0
+  version: 7.17.0
   volumeClaimDeletePolicy: DeleteOnScaledownOnly  
   nodeSets:
     - name: master
-      count: 1
+      count: 3
       config:
         node:
           roles: [ "master" ]
