@@ -3,7 +3,7 @@ kind: Service
 metadata:
   annotations:
     # https://docs.microsoft.com/en-us/azure/aks/static-ip#apply-a-dns-label-to-the-service
-    service.beta.kubernetes.io/azure-dns-label-name: azuretar-minecraft
+    service.beta.kubernetes.io/azure-dns-label-name: minecraft
   name: bungee-lb
 spec:
   type: LoadBalancer
@@ -11,4 +11,4 @@ spec:
     - port: 25565
       targetPort: 25577 # On Bungeecord, it's 25577 by default
   selector:
-    app: azuretar-bungeecord
+    app: bungeecord

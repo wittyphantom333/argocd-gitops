@@ -3,20 +3,27 @@ kind: Deployment
 metadata:
   name: bungeecord
   labels:
-    app: azuretar-bungeecord
+    app: bungeecord
 spec:
   selector:
     matchLabels:
-      app: azuretar-bungeecord
+      app: bungeecord
   template:
     metadata:
       labels:
-        app: azuretar-bungeecord
+        app: bungeecord
     spec:
       containers:
       - name: bungeecord # Pod name
         image: git.pushingstart.com:5050/public-repository/wizardly-things/bungeecord:latest
         imagePullPolicy: Always # Always re-pull the image when creating container
+        resources:
+          requests:
+            memory: 2Gi
+            cpu: '1'
+          limits:
+            memory: 4Gi
+            cpu: '2'
         tty: true # TTY and STDIN is required if you ever want to attach to the container
         stdin: true
         ports:

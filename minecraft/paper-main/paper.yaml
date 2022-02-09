@@ -3,15 +3,16 @@ kind: Deployment
 metadata:
   name: paper
   labels:
-    app: azuretar-paper
+    app: paper
 spec:
+  count: 3
   selector:
     matchLabels:
-      app: azuretar-paper
+      app: paper
   template:
     metadata:
       labels:
-        app: azuretar-paper
+        app: paper
     spec:
       volumes:
         # Declare a Volume called `paper-worlds` that asks `minecraft-data-pvc` for a storage
@@ -22,6 +23,13 @@ spec:
       - name: paper
         image: git.pushingstart.com:5050/public-repository/wizardly-things/paper:latest
         imagePullPolicy: Always
+        resources:
+          requests:
+            memory: 1Gi
+            cpu: '1'
+          limits:
+            memory: 8Gi
+            cpu: '4'       
         tty: true
         stdin: true
         env:

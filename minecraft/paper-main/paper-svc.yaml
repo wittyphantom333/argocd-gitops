@@ -6,4 +6,4 @@ spec:
   ports:
   - port: 25565 # Expose 25565 port on Paper container
   selector:
-    app: azuretar-paper
+    app: paper
