@@ -1,8 +1,9 @@
+---
 apiVersion: elasticsearch.k8s.elastic.co/v1
 kind: Elasticsearch
 metadata:
   name: elasticsearch
-   annotations:
+  annotations:
     elasticsearch.alpha.elastic.co/autoscaling-spec: |
       {
           "policies": [{
@@ -39,31 +40,18 @@ spec:
   version: 7.17.0
   nodeSets:
     - name: master
-      count: 1
+      count: 3
       config:
         node:
           roles: [ "master" ]
           store.allow_mmap: false
-          xpack.monitoring.collection.enabled: true
     - name: di
       config:
         node:
           roles: [ "data", "ingest", "transform" ]
           store.allow_mmap: false
-          xpack.monitoring.collection.enabled: true
     - name: ml
       config:
         node:
           roles: [ "ml" ]
           store.allow_mmap: false
-          xpack.monitoring.collection.enabled: true
-      volumeClaimTemplates:
-    - metadata:
-        name: elasticsearch-data # Do not change this name unless you set up a volume mount for the data path.
-      spec:
-        accessModes:
-        - ReadWriteOnce
-        resources:
-          requests:
-            storage: 50Gi
-        storageClassName: standard
