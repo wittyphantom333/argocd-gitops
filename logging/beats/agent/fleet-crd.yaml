@@ -1,9 +1,10 @@
-apiVersion: apps/v1
+apiVersion: agent.k8s.elastic.co/v1alpha1
 kind: Agent
 metadata:
   name: fleet-server
+  namespace: default
 spec:
-  version: 7.17.0 # should be bumped to 7.15.1 once released, see https://github.com/elastic/cloud-on-k8s/pull/4873#issuecomment-930247845
+  version: 7.17.0
   kibanaRef:
     name: kibana
   elasticsearchRefs:
@@ -14,7 +15,7 @@ spec:
     replicas: 1
     podTemplate:
       spec:
-        serviceAccountName: fleet-server
+        serviceAccountName: elastic-agent
         automountServiceAccountToken: true
         securityContext:
           runAsUser: 0
