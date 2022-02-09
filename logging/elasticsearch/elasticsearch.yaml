@@ -57,3 +57,4 @@ spec:
           roles: [ "ml" ]
           store.allow_mmap: false
           xpack.monitoring.collection.enabled: true
+          
