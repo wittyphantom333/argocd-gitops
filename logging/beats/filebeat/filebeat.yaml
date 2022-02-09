@@ -8,6 +8,13 @@ spec:
   elasticsearchRef:
     name: elasticsearch
   config:
+    filebeat.modules:
+    - module: threatintel
+    abuseurl:
+      enabled: true
+      var.input: httpjson
+      var.url: https://urlhaus-api.abuse.ch/v1/urls/recent/
+      var.interval: 60m
     filebeat.inputs:
     - type: container
       paths:
