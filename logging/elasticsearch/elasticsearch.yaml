@@ -41,20 +41,19 @@ spec:
     - name: master
       count: 1
       config:
+        xpack.monitoring.collection.enabled: true
         node:
           roles: [ "master" ]
           store.allow_mmap: false
-          xpack.monitoring.collection.enabled: true
     - name: di
       config:
+        xpack.monitoring.collection.enabled: true
         node:
           roles: [ "data", "ingest", "transform", "remote_cluster_client" ]
           store.allow_mmap: false
-          xpack.monitoring.collection.enabled: true
     - name: ml
       config:
+        xpack.monitoring.collection.enabled: true
         node:
           roles: [ "ml" ]
           store.allow_mmap: false
-          xpack.monitoring.collection.enabled: true
-          
