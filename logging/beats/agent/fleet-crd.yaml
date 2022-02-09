@@ -3,7 +3,7 @@ kind: Agent
 metadata:
   name: fleet-server
 spec:
-  version: 7.17.0
+  version: 7.16.2
   kibanaRef:
     name: kibana
   elasticsearchRefs:
