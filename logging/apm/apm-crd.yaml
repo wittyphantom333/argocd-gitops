@@ -1,21 +1,32 @@
 apiVersion: apm.k8s.elastic.co/v1
 kind: ApmServer
 metadata:
-  name: apm
+  name: apm-server
   namespace: default
 spec:
   version: 7.17.0
-  count: 2
-  elasticsearchRef:
-    name: elasticsearch
+  count: 1
+  secureSettings:
+  - secretName: apm-secret-settings
+  config:
+    output:
+      elasticsearch:
+        hosts: [elasticsearch:9200"]
+        username: elastic
+        password: "1h6Eu4wgb2rAQ66A1314krxe"
+        protocol: "https"
+        ssl.certificate_authorities: ["/usr/share/apm-server/config/elasticsearch-ca/tls.crt"]
   podTemplate:
     spec:
       containers:
-      - name: apm
-        resources:
-          requests:
-            memory: 1Gi
-            cpu: 0.5
-          limits:
-            memory: 2Gi
-            cpu: 2    
+      - name: apm-server
+        volumeMounts:
+        - mountPath: /usr/share/apm-server/config/elasticsearch-ca
+          name: elasticsearch-ca
+          readOnly: true
+      volumes:
+      - name: elasticsearch-ca
+        secret:
+          defaultMode: 420
+          optional: false
+          secretName: elasticsearch-es-remote-ca # This is the secret that holds the Elasticsearch CA cert
