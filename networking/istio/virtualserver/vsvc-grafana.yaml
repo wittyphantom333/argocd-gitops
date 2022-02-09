@@ -4,7 +4,7 @@ metadata:
   name: grafana
 spec:
   hosts:
-  - "apps.pushingstart.com"
+  - "*"
   gateways:
   - apps-gateway
   http:

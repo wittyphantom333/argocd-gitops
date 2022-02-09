@@ -10,7 +10,7 @@ spec:
   http:
   - match:
     - uri:
-        prefix: /kibana
+        prefix: /kibana/
     route:
     - destination:
         port:

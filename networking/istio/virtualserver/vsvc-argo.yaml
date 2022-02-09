@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 spec:
   hosts:
-  - "apps.pushingstart.com"
+  - "*"
   gateways:
   - apps-gateway
   http:
