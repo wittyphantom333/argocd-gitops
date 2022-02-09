@@ -10,7 +10,7 @@ spec:
   enterpriseSearchRef:
     name: enterprise-search  
   config:
-    xpack.fleet.agents.elasticsearch.host: "https://elasticsearch-es-http.default.svc:9200"
+    xpack.fleet.agents.elasticsearch.hosts: ["https://elasticsearch-es-http.default.svc:9200"]
     xpack.fleet.agents.fleet_server.hosts: ["https://fleet-server-agent-http.default.svc:8220"]
     xpack.fleet.packages:
     - name: apm
