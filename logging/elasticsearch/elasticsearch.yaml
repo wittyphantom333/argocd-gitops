@@ -44,7 +44,7 @@ spec:
       config:
         xpack.monitoring.collection.enabled: true
         node:
-          roles: [ "master" ]
+          roles: [ "master", "remote_cluster_client" ]
           store.allow_mmap: false
     - name: di
       config:
