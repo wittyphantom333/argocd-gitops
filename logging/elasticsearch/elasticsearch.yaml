@@ -7,7 +7,7 @@ metadata:
       {
           "policies": [{
               "name": "di",
-              "roles": ["data", "ingest" , "transform", "remote_cluster_client"],
+              "roles": ["data", "ingest" , "transform"],
               "deciders": {
                 "proactive_storage": {
                     "forecast_window": "5m"
@@ -31,7 +31,7 @@ metadata:
               "resources": {
                   "nodeCount": { "min": 1, "max": 3 },
                   "cpu": { "min": 1, "max": 4 },
-                  "memory": { "min": "2Gi", "max": "8Gi" },
+                  "memory": { "min": "1Gi", "max": "6Gi" },
                   "storage": { "min": "10Gi", "max": "50Gi" }
               }
           }]
