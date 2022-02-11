@@ -13,7 +13,7 @@ spec:
       elasticsearch:
         hosts: [elasticsearch-es-http"]
         username: elastic
-        password: "1h6Eu4wgb2rAQ66A1314krxe"
+        password: "l553gB79L74lhzUX45uPyH6l"
         protocol: "https"
         ssl.certificate_authorities: ["/usr/share/apm-server/config/elasticsearch-ca/tls.crt"]
   podTemplate:
