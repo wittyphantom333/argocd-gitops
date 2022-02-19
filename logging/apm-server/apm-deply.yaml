@@ -44,4 +44,4 @@ spec:
         secret:
           defaultMode: 420
           optional: false
-          secretName: es-ca # This is the secret that holds the Elasticsearch CA cert
+          secretName: elasticsearch-es-transport-ca-internal # This is the secret that holds the Elasticsearch CA cert
