@@ -31,17 +31,17 @@ spec:
         index_pattern: "apm-*-source_map*"
   elasticsearchRef:
     name: elasticsearch
-podTemplate:
-  spec:
-    containers:
-    - name: apm-server
-      volumeMounts:
-      - mountPath: /usr/share/apm-server/config/elasticsearch-ca
-        name: elasticsearch-ca
-        readOnly: true
-    volumes:
-    - name: elasticsearch-ca
-      secret:
-        defaultMode: 420
-        optional: false
-        secretName: es-ca # This is the secret that holds the Elasticsearch CA cert
+  podTemplate:
+    spec:
+      containers:
+      - name: apm-server
+        volumeMounts:
+        - mountPath: /usr/share/apm-server/config/elasticsearch-ca
+          name: elasticsearch-ca
+          readOnly: true
+      volumes:
+      - name: elasticsearch-ca
+        secret:
+          defaultMode: 420
+          optional: false
+          secretName: es-ca # This is the secret that holds the Elasticsearch CA cert
