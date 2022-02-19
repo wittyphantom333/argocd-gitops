@@ -1,0 +1,47 @@
+apiVersion: apm.k8s.elastic.co/v1
+kind: ApmServer
+metadata:
+  name: apm-server-elasticsearch
+  namespace: default
+spec:
+  version: 7.15.0
+  count: 1
+  secureSettings:
+  - secretName: apm-secret-settings
+  config:
+    output:
+      elasticsearch:
+        hosts: ["elasticsearch-es-http:9200"]
+        username: elastic
+        password: "Cbd6nXX6EQ1z86851y0XM5vO"
+        protocol: "https"
+        ssl.certificate_authorities: ["/usr/share/apm-server/config/elasticsearch-ca/tls.crt"]
+    rum:
+      enabled: true
+      event_rate:
+        limit: 300
+        lru_size: 1000
+      allow_origins: ['*']
+      library_pattern: "node_modules|~"
+      exclude_from_grouping: "^/webpack"
+      source_mapping:
+        enabled: true
+        cache:
+          expiration: 5m
+        index_pattern: "apm-*-source_map*"
+  elasticsearchRef:
+    name: elasticsearch
+podTemplate:
+  spec:
+    containers:
+    - name: apm-server
+      volumeMounts:
+      - mountPath: /usr/share/apm-server/config/elasticsearch-ca
+        name: elasticsearch-ca
+        readOnly: true
+    volumes:
+    - name: elasticsearch-ca
+      secret:
+        defaultMode: 420
+        optional: false
+        secretName: es-ca # This is the secret that holds the Elasticsearch CA cert
