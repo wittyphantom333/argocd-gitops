@@ -4,7 +4,7 @@ metadata:
   name: apm-server-elasticsearch
   namespace: default
 spec:
-  version: 7.15.0
+  version: 8.1.2
   count: 1
   secureSettings:
   - secretName: apm-secret-settings
