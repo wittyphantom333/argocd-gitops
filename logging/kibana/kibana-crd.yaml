@@ -44,22 +44,24 @@ spec:
             - logs
             - metrics
         package_policies:
-      - name: fleet_server-1
-        id: fleet_server-1
-        package:
-          name: fleet_server
+          - name: fleet_server-1
+            id: fleet_server-1
+            package:
+              name: fleet_server
       - name: APM on ECK policy
         is_default: true
         unenroll_timeout: 900
         package_policies:
-      - package:
-          name: apm
-          inputs:
-          - type: apm
-          enabled: true
-          vars:
-          - name: host
-              value: 0.0.0.0:8200
+          - name: apm-1
+            id: apm-1
+            package:
+                name: apm
+                inputs:
+                - type: apm
+                enabled: true
+                vars:
+                - name: host
+                    value: 0.0.0.0:8200
       - name: Elastic Agent on ECK policy
         id: eck-agent
         namespace: default
