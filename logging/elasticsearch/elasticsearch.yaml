@@ -6,19 +6,21 @@ spec:
   version: 8.1.2
   nodeSets:
     - name: master
-      count: 1
+      count: 3
       config:
         xpack.monitoring.collection.enabled: true
         node:
           roles: [ "master", "remote_cluster_client" ]
           store.allow_mmap: false
     - name: di
+      count: 2
       config:
         xpack.monitoring.collection.enabled: true
         node:
           roles: [ "data", "ingest", "transform", "remote_cluster_client" ]
           store.allow_mmap: false
     - name: ml
+      count: 1
       config:
         xpack.monitoring.collection.enabled: true
         node:
