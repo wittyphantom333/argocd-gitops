@@ -15,7 +15,7 @@ metadata:
               },
               "resources": {
                   "nodeCount": { "min": 2, "max": 8 },
-                  "cpu": { "min": 8, "max": 12 },
+                  "cpu": { "min": 4, "max": 12 },
                   "memory": { "min": "2Gi", "max": "4Gi" },
                   "storage": { "min": "50Gi", "max": "50Gi" }
               }
@@ -30,7 +30,7 @@ metadata:
               },
               "resources": {
                   "nodeCount": { "min": 1, "max": 4 },
-                  "cpu": { "min": 8, "max": 12 },
+                  "cpu": { "min": 4, "max": 12 },
                   "memory": { "min": "2Gi", "max": "4Gi" },
                   "storage": { "min": "10Gi", "max": "10Gi" }
               }
