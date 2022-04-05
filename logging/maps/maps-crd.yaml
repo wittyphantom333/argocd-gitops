@@ -3,7 +3,7 @@ kind: ElasticMapsServer
 metadata:
   name: maps
 spec:
-  version: 8.12
+  version: 8.1.2
   podTemplate:
     spec:
       containers:
