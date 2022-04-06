@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fosscord
+spec:
+  selector:
+    matchLabels:
+      app: fosscord
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: fosscord
+    spec:
+      containers:
+      - name: fosscord
+        image: registry.apps.pushingstart.com/fosscord/fosscord:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
