@@ -7,6 +7,6 @@ spec:
     app: fosscord
   ports:
   - protocol: "TCP"
-    port: 3001
+    port: 443
     targetPort: 3001
   type: LoadBalancer
