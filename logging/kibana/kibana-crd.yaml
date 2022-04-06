@@ -58,7 +58,6 @@ spec:
             value: 0.0.0.0:8200
     - name: Elastic Agent on ECK policy
       id: eck-agent
-      namespace: default
       monitoring_enabled:
          - logs
          - metrics
