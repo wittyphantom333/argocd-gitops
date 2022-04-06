@@ -25,8 +25,8 @@ spec:
             cpu: 2    
   config:
     newsfeed.enabled: false
-    xpack.fleet.agents.elasticsearch.host: "https://elasticsearch-es-http.default.svc:9200"
-    xpack.fleet.agents.fleet_server.hosts: ["https://fleet-server-agent-http.default.svc:8220"]
+    xpack.fleet.agents.elasticsearch.host: "https://elasticsearch-es-http.logging.svc:9200"
+    xpack.fleet.agents.fleet_server.hosts: ["https://fleet-server-agent-http.logging.svc:8220"]
     xpack.fleet.packages:
     - name: apm
       version: latest
@@ -38,12 +38,14 @@ spec:
       version: latest
     xpack.fleet.agentPolicies:
     - name: Default Fleet Server on ECK policy
+      id: eck-fleet
       is_default_fleet_server: true
       package_policies:
       - package:
           name: fleet_server
         name: fleet_server-1
-    - name: Default Elastic Agent on ECK policy
+    - name: APM on ECK policy
+      id: eck-apm
       is_default: true
       unenroll_timeout: 900
       package_policies:
