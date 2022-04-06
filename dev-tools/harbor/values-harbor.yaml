@@ -9,7 +9,7 @@
 ## @param global.storageClass Global StorageClass for Persistent Volume(s)
 ##
 global:
-  imageRegistry: marketplace.azurecr.io
+  imageRegistry: ""
   ## E.g.
   ## imagePullSecrets:
   ##   - myRegistryKeySecretName
@@ -77,7 +77,7 @@ adminPassword: ""
 ## 4) if "exposureType" is "proxy" and "service.type" is "LoadBalancer",
 ## the "domain" should be the LoadBalancer IP
 ##
-externalURL: https://registry.apps.pushingstart.com
+externalURL: https://core.harbor.domain
 ## The proxy settings for updating clair vulnerabilities from the Internet and replicating
 ## artifacts from/to the registries that cannot be reached directly
 ## Note: If Harbor is exposed via Ingress, the NGINX server will not be used
@@ -211,7 +211,7 @@ ingress:
     controller: default
     ## @param ingress.core.hostname Default host for the ingress record
     ##
-    hostname: registry.apps.pushingstart.com
+    hostname: core.harbor.domain
     ## @param ingress.core.annotations [object] Additional annotations for the Ingress resource. To enable certificate autogeneration, place here your cert-manager annotations.
     ## Use this parameter to set the required annotations for cert-manager, see
     ## ref: https://cert-manager.io/docs/usage/ingress/#supported-annotations
@@ -239,7 +239,7 @@ ingress:
     ## @param ingress.core.extraHosts An array with additional hostname(s) to be covered with the ingress record
     ## e.g:
     ## extraHosts:
-    ##   - name: registry.apps.pushingstart.com
+    ##   - name: core.harbor.domain
     ##     path: /
     ##
     extraHosts: []
@@ -257,8 +257,8 @@ ingress:
     ## e.g:
     ## extraTls:
     ## - hosts:
-    ##     - registry.apps.pushingstart.com
-    ##   secretName: registry.apps.pushingstart.com-tls
+    ##     - core.harbor.domain
+    ##   secretName: core.harbor.domain-tls
     ##
     extraTls: []
     ## @param ingress.core.secrets Custom TLS certificates as secrets
@@ -270,7 +270,7 @@ ingress:
     ## Please see README.md for more information
     ## e.g:
     ## secrets:
-    ##   - name: registry.apps.pushingstart.com-tls
+    ##   - name: core.harbor.domain-tls
     ##     key: |-
     ##       -----BEGIN RSA PRIVATE KEY-----
     ##       ...
@@ -708,7 +708,7 @@ nginx:
     existingSecret: ""
     ## @param nginx.tls.commonName The common name used to generate the self-signed TLS certificates
     ##
-    commonName: registry.apps.pushingstart.com
+    commonName: core.harbor.domain
   ## @param nginx.behindReverseProxy If NGINX is behind another reverse proxy, set to true
   ## if the reverse proxy already provides the 'X-Forwarded-Proto' header field.
   ## This is, for example, the case for the OpenShift HAProxy router.
