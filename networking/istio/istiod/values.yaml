@@ -341,7 +341,7 @@ global:
     logLevel: warning
 
     #If set to true, istio-proxy container will have privileged securityContext
-    privileged: false
+    privileged: true
 
     # The number of successive failed probes before indicating readiness failure.
     readinessFailureThreshold: 30
