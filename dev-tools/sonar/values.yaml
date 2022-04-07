@@ -41,7 +41,7 @@ elasticsearch:
   bootstrapChecks: true
 
 service:
-  type: ClusterIP
+  type: LoadBalancer
   externalPort: 9000
   internalPort: 9000
   labels:
@@ -54,10 +54,10 @@ service:
   # You can set the port to be exposed when type is NodePort or LoadBalancer.
   # nodePort: 30000
 ingress:
-  enabled: false
+  enabled: true
   # Used to create an Ingress record.
   hosts:
-    - name: sonar.organization.com
+    - name: sonar.apps.pushingstart.com
       # Different clouds or configurations might need /* as the default path
       path: /
       # Only for API version "networking.k8s.io/v1"
@@ -256,7 +256,7 @@ emptyDir: {}
 # sonarProperties:
 #   sonar.forceAuthentication: true
 #   sonar.security.realm: LDAP
-#   ldap.url: ldaps://organization.com
+#   ldap.url: ldaps://apps.pushingstart.com
 
 # Additional sonar properties to load from a secret with a key "secret.properties" (must be a string)
 # sonarSecretProperties:

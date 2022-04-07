@@ -94,7 +94,7 @@ expose:
     # The name of LoadBalancer service
     name: harbor
     # Set the IP if the LoadBalancer supports assigning IP
-    IP: ""
+    IP: "10.5.115.6"
     ports:
       # The service port Harbor listens on when serving with HTTP
       httpPort: 80
