@@ -1,1 +1,0 @@
-ECK Deployment for Kubernettes
