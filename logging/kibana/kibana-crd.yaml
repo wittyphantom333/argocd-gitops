@@ -25,8 +25,8 @@ spec:
             cpu: 2    
   config:
     newsfeed.enabled: false
-    xpack.fleet.agents.elasticsearch.host: "https://elasticsearch-es-http.logging.svc:9200"
-    xpack.fleet.agents.fleet_server.hosts: ["https://fleet-server-agent-http.logging.svc:8220"]
+    xpack.fleet.agents.elasticsearch.host: "https://elasticsearch-es-http.default.svc:9200"
+    xpack.fleet.agents.fleet_server.hosts: ["https://fleet-server-agent-http.default.svc:8220"]
     xpack.fleet.packages:
     - name: apm
       version: latest
