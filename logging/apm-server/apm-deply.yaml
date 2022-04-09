@@ -2,6 +2,7 @@ apiVersion: apm.k8s.elastic.co/v1
 kind: ApmServer
 metadata:
   name: apm-server-elasticsearch
+  namespace: default
 spec:
   version: 8.1.2
   count: 1
@@ -10,9 +11,9 @@ spec:
   config:
     output:
       elasticsearch:
-        hosts: ["elasticsearch-es-http.default.svc:9200"]
+        hosts: ["elasticsearch-es-http:9200"]
         username: elastic
-        password: "T3DMOQ56h1Win62IgO0S753Z"
+        password: "Cbd6nXX6EQ1z86851y0XM5vO"
         protocol: "https"
         ssl.certificate_authorities: ["/usr/share/apm-server/config/elasticsearch-ca/tls.crt"]
     rum:
