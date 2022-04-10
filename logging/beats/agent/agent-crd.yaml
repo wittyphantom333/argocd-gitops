@@ -12,7 +12,7 @@ spec:
   daemonSet:
     podTemplate:
       spec:
-        serviceAccountName: elastic-agent
+        serviceAccountName: fleet-server
         automountServiceAccountToken: true
         securityContext:
           runAsUser: 0
