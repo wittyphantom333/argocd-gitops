@@ -82,3 +82,5 @@ kubectl expose service apm-server-elasticsearch-apm-http --port=8200 --type=Load
 
 
 kubectl expose service fleet-server-agent-http --port=8220 --type=LoadBalancer --name=jenkins-1649536123-lb
+
+kubectl expose service harbor-1649553719-registry --port=5000 --type=LoadBalancer --name=harbor-1649553719-registry-lb

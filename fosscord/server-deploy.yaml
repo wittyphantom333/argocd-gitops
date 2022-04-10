@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: fosscord
-        image: registry.apps.pushingstart.com/fosscord/fosscord
+        image: registry.apps.pushingstart.com/fosscord/fosscord:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000
