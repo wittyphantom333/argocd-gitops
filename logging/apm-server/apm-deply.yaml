@@ -31,6 +31,8 @@ spec:
         index_pattern: "apm-*-source_map*"
   elasticsearchRef:
     name: elasticsearch
+  kibanaRef:
+    name: kibana
   podTemplate:
     spec:
       containers:
@@ -44,4 +46,4 @@ spec:
         secret:
           defaultMode: 420
           optional: false
-          secretName: elasticsearch-es-transport-ca-internal # This is the secret that holds the Elasticsearch CA cert
+          secretName: elasticsearch-es-http-certs-public # This is the secret that holds the Elasticsearch CA cert
