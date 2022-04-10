@@ -67,8 +67,18 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 
  
 
-
- export GOVC_URL=vcenter.pushingstart.com
+export GOVC_URL=vcenter.pushingstart.com
 export GOVC_USERNAME='administrator@pushingstart.com'
 export GOVC_PASSWORD='Fordmustang1313!!!'
 export GOVC_INSECURE=true
+
+
+
+kubectl expose deployment kibana-kb --port=5601 --type=LoadBalancer --name=kibana-kb-lb
+
+kubectl expose service elasticsearch-es-http --port=9200 --type=LoadBalancer --name=elasticsearch-es-http-lb
+
+kubectl expose service apm-server-elasticsearch-apm-http --port=8200 --type=LoadBalancer --name=apm-server-elasticsearch-apm-http-lb
+
+
+kubectl expose service fleet-server-agent-http --port=8220 --type=LoadBalancer --name=jenkins-1649536123-lb
