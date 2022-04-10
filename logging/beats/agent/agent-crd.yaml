@@ -13,7 +13,6 @@ spec:
     podTemplate:
       spec:
         serviceAccountName: elastic-agent
-        hostNetwork: true
         dnsPolicy: ClusterFirstWithHostNet
         automountServiceAccountToken: true
         securityContext:
