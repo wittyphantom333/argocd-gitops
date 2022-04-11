@@ -9,7 +9,7 @@ spec:
     name: elasticsearch
   config:
     # define the exposed URL at which users will reach Enterprise Search
-    ent_search.external_url: https://kibana.apps.pushingstart.com
+    ent_search.external_url: https://apm.apps.pushingstart.com
     # define the exposed URL at which users will reach Kibana
     kibana.host: https://kibana.apps.pushingstart.com
     # configure app search document size limit
