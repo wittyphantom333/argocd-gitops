@@ -22,7 +22,7 @@ metadata:
           },
           {
               "name": "ml",
-              "roles": ["ml"],
+              "roles": ["ml", "remote_cluster_client"],
               "deciders": {
                   "ml": {
                       "down_scale_delay": "10m"
@@ -56,5 +56,5 @@ spec:
       config:
         xpack.monitoring.collection.enabled: true
         node:
-          roles: [ "ml"]
+          roles: [ "ml", "remote_cluster_client"]
           store.allow_mmap: false
