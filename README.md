@@ -78,7 +78,7 @@ kubectl expose deployment kibana-kb --port=5601 --type=LoadBalancer --name=kiban
 
 kubectl expose service elasticsearch-es-http --port=9200 --type=LoadBalancer --name=elasticsearch-es-http-lb
 
-kubectl expose service apm-server-elasticsearch-apm-http --port=8200 --type=LoadBalancer --name=apm-server-elasticsearch-apm-http-lb
+kubectl expose service apm-server-apm-http --port=8200 --type=LoadBalancer --name=apm-server-apm-http-lb
 
 
 kubectl expose service fleet-server-agent-http --port=8220 --type=LoadBalancer --name=jenkins-1649536123-lb
