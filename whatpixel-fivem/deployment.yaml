@@ -28,22 +28,22 @@ spec:
                 name: steam-token
                 key: SRCDS_TOKEN
         volumeMounts:
-          - name: whatpixel-fivem-configuration-server-cfg
-            mountPath: /home/steam/whatpixel-fivem/whatpixel-fivem/server.cfg
-            subPath: server.cfg
-          - name: whatpixel-fivem-configuration-autoexec-cfg
-            mountPath: /home/steam/whatpixel-fivem/whatpixel-fivem/autoexec.cfg
-            subPath: autoexec.cfg
-          volumes:
-            - name: whatpixel-fivem-configuration-server-cfg
-              configMap:
-                name: whatpixel-fivem-configuration
-                items:
-                - key: server.cfg
-                  path: server.cfg
-            - name: whatpixel-fivem-configuration-autoexec-cfg
-              configMap:
-                name: whatpixel-fivem-configuration
-                items:
-                - key: autoexec.cfg
-                  path: autoexec.cfg
+        - name: whatpixel-fivem-configuration-server-cfg
+          mountPath: /home/steam/whatpixel-fivem/whatpixel-fivem/server.cfg
+          subPath: server.cfg
+        - name: whatpixel-fivem-configuration-autoexec-cfg
+          mountPath: /home/steam/whatpixel-fivem/whatpixel-fivem/autoexec.cfg
+          subPath: autoexec.cfg
+        volumes:
+        - name: whatpixel-fivem-configuration-server-cfg
+          configMap:
+            name: whatpixel-fivem-configuration
+            items:
+            - key: server.cfg
+              path: server.cfg
+        - name: whatpixel-fivem-configuration-autoexec-cfg
+          configMap:
+            name: whatpixel-fivem-configuration
+            items:
+            - key: autoexec.cfg
+              path: autoexec.cfg
