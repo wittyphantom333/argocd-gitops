@@ -28,6 +28,13 @@ spec:
       containers:
       - image: registry.apps.pushingstart.com/fivem-dev/baycity:latest
         name: dev-fivem-server
+        resources:
+          requests:
+            memory: 2Gi
+            cpu: 1
+          limits:
+            memory: 4Gi
+            cpu: 2
         ports:
         - containerPort: 30120
           protocol: TCP 
@@ -37,7 +44,7 @@ spec:
               secretKeyRef:
                 name: dev-fivem-token
                 key: SRCDS_TOKEN
-        volumeMounts:
-          - name: dev-fivem-configuration-server-cfg
-            mountPath: /home/fivem/fx-server-data/server.cfg
-            subPath: server.cfg
+      volumeMounts:
+      - name: dev-fivem-configuration-server-cfg
+        mountPath: /home/fivem/fx-server-data/server.cfg
+        subPath: server.cfg
