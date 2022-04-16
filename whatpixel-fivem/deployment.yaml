@@ -19,7 +19,7 @@ spec:
       volumes:
       - name: whatpixel-fivem-data
         persistentVolumeClaim:
-          claimName: whatpixel-fivem-data-pvc
+          claimName: whatpixel-fivem-data
       containers:
       - name: whatpixel-fivem-server
         image: registry.apps.pushingstart.com/whatpixel/fivem:latest
@@ -43,7 +43,7 @@ spec:
           name: whatpixel-fivem
         volumeMounts:
           - name: whatpixel-fivem-data
-            mountPath:  /data
+            mountPath:  /
         readinessProbe:
           exec:
             command:
