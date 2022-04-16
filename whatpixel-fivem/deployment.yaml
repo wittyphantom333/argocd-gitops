@@ -44,7 +44,3 @@ spec:
               secretKeyRef:
                 name: dev-fivem-token
                 key: SRCDS_TOKEN
-      volumeMounts:
-      - name: dev-fivem-configuration-server-cfg
-        mountPath: /home/fivem/fx-server-data/server.cfg
-        subPath: server.cfg
