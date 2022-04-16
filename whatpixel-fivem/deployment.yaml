@@ -4,7 +4,7 @@ metadata:
   labels:
     app: dev-fivem-deployment
   name: dev-fivem-deployment
-  namespace: steam-games
+  namespace: fivem
 spec:
   replicas: 1
   selector:
