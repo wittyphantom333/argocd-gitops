@@ -1,62 +1,43 @@
-# docker run -d -it -v /path/on/host:/data -e EULA=TRUE -p 25565:25565 --name mc itzg/whatpixel-fivem-server
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: whatpixel-fivem-server
-  namespace: fivem
   labels:
-    app: whatpixel-fivem-server
+    app: whatpixel-fivem-deployment
+  name: whatpixel-fivem-deployment
+  namespace: steam-games
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: whatpixel-fivem-server
+      app: whatpixel-fivem-deployment
   template:
     metadata:
       labels:
-        app: whatpixel-fivem-server
+        app: whatpixel-fivem-deployment
     spec:
       volumes:
       - name: whatpixel-fivem-data
         persistentVolumeClaim:
           claimName: whatpixel-fivem-data
+      - name: whatpixel-fivem-configuration-server-cfg
+        configMap:
+          name: whatpixel-fivem-configuration
+          items:
+          - key: server.cfg
+            path: server.cfg
       containers:
-      - name: whatpixel-fivem-server
-        image: registry.apps.pushingstart.com/whatpixel/fivem:latest
-        resources:
-          limits:
-            cpu: 1024m
-            memory: 4Gi
-          requests:
-            memory: 1.5Gi
-        env:
-          - name:  EULA
-            value: 'TRUE'
-          - name: MODE
-            value: creative
-          - name: MOTD
-            value: Your super-cool whatpixel-fivem server
-          - name: ALLOW_FLIGHT
-            value: 'TRUE'
+      - image: registry.apps.pushingstart.com/whatpixel/fivem:latest
+        name: whatpixel-fivem-server
         ports:
         - containerPort: 30120
-          name: whatpixel-fivem
+          protocol: TCP 
+        env:
+          - name: SRCDS_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: whatpixel-fivem-token
+                key: SRCDS_TOKEN
         volumeMounts:
-          - name: whatpixel-fivem-data
-            mountPath:  /
-        readinessProbe:
-          exec:
-            command:
-            - mcstatus
-            - 127.0.0.1
-            - ping
-          initialDelaySeconds: 30
-          periodSeconds: 30
-        livenessProbe:
-          exec:
-            command:
-            - mcstatus
-            - 127.0.0.1
-            - ping
-          initialDelaySeconds: 30
-          periodSeconds: 30
+          - name: whatpixel-fivem-configuration-server-cfg
+            mountPath: /home/fivem/fx-server-data/server.cfg
+            subPath: server.cfg

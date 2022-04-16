@@ -13,5 +13,5 @@ data:
     writeip
 kind: ConfigMap
 metadata:
-  name: csgo-configuration
-  namespace: steam-games
+  name: whatpixel-fivem-configuration
+  namespace: fivem
