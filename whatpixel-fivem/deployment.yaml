@@ -2,32 +2,32 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: whatpixel-fivem-deployment
-  name: whatpixel-fivem-deployment
+    app: dev-fivem-deployment
+  name: dev-fivem-deployment
   namespace: steam-games
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: whatpixel-fivem-deployment
+      app: dev-fivem-deployment
   template:
     metadata:
       labels:
-        app: whatpixel-fivem-deployment
+        app: dev-fivem-deployment
     spec:
       volumes:
-      - name: whatpixel-fivem-data
+      - name: dev-fivem-data
         persistentVolumeClaim:
-          claimName: whatpixel-fivem-data
-      - name: whatpixel-fivem-configuration-server-cfg
+          claimName: dev-fivem-data
+      - name: dev-fivem-configuration-server-cfg
         configMap:
-          name: whatpixel-fivem-configuration
+          name: dev-fivem-configuration
           items:
           - key: server.cfg
             path: server.cfg
       containers:
-      - image: registry.apps.pushingstart.com/whatpixel/fivem:latest
-        name: whatpixel-fivem-server
+      - image: registry.apps.pushingstart.com/fivem-dev/baycity:latest
+        name: dev-fivem-server
         ports:
         - containerPort: 30120
           protocol: TCP 
@@ -35,9 +35,9 @@ spec:
           - name: SRCDS_TOKEN
             valueFrom:
               secretKeyRef:
-                name: whatpixel-fivem-token
+                name: dev-fivem-token
                 key: SRCDS_TOKEN
         volumeMounts:
-          - name: whatpixel-fivem-configuration-server-cfg
+          - name: dev-fivem-configuration-server-cfg
             mountPath: /home/fivem/fx-server-data/server.cfg
             subPath: server.cfg

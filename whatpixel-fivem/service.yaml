@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: whatpixel-fivem-ns
-  name: whatpixel-fivem-ns
+    app: dev-fivem-ns
+  name: dev-fivem-ns
   namespace: fivem
 spec:
   ports:
@@ -12,5 +12,5 @@ spec:
     protocol: UDP
     targetPort: 30120
   selector:
-    app: whatpixel-fivem-deployment
+    app: dev-fivem-deployment
   type: LoadBalancer
