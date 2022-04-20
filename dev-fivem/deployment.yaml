@@ -31,21 +31,21 @@ spec:
         resources:
           requests:
             memory: 2Gi
-            cpu: 1
+            cpu: 1024m
           limits:
             memory: 4Gi
-            cpu: 2
+            cpu: 2048m
         env:
           - name: SERVER_PROFILE
             value: "default"
           - name: FIVEM_PORT
-            value: 30120
+            value: "30120"
           - name: TXADMIN_PORT
-            value: 40120
+            value: "40120"
           - name: HOST_UID
-            value: 1000
+            value: "1000"
           - name: HOST_GID
-            value: 100
+            value: "100"
           - name: FIVEM_HOSTNAME
             value: "dev-test-001"
           - name: FIVEM_LICENCE_KEY
