@@ -38,3 +38,5 @@ spec:
         ports:
         - containerPort: 30120
           protocol: TCP 
+        - containerPort: 30120
+          protocol: UDP 
