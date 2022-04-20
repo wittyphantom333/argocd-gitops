@@ -9,8 +9,16 @@ spec:
   ports:
   - name: fivem
     port: 30120
+    protocol: TCP
+    targetPort: 30120
+  - name: fivem
+    port: 30120
     protocol: UDP
     targetPort: 30120
+  - name: txadmin
+    port: 40120
+    protocol: TCP
+    targetPort: 40120
   selector:
     app: dev-fivem-deployment
   type: LoadBalancer
