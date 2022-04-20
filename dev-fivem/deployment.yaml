@@ -38,9 +38,3 @@ spec:
         ports:
         - containerPort: 30120
           protocol: TCP 
-        env:
-          - name: SRCDS_TOKEN
-            valueFrom:
-              secretKeyRef:
-                name: dev-fivem-token
-                key: SRCDS_TOKEN
