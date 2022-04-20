@@ -2,26 +2,32 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: dev-fivem-workspace-001
-  name: dev-fivem-workspace-001
+    app: dev-fivem-deployment
+  name: dev-fivem-deployment
   namespace: fivem
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: dev-fivem-workspace-001
+      app: dev-fivem-deployment
   template:
     metadata:
       labels:
-        app: dev-fivem-workspace-001
+        app: dev-fivem-deployment
     spec:
       volumes:
-      - name: dev-fivem-workspace-001
+      - name: dev-fivem-data
         persistentVolumeClaim:
-          claimName: dev-fivem-workspace-001-data
+          claimName: dev-fivem-data
+      - name: dev-fivem-configuration-server-cfg
+        configMap:
+          name: dev-fivem-configuration
+          items:
+          - key: server.cfg
+            path: server.cfg
       containers:
       - image: registry.apps.pushingstart.com/fivem-dev/baycity:latest
-        name: dev-fivem-workspace-001
+        name: dev-fivem-server
         resources:
           requests:
             memory: 2Gi

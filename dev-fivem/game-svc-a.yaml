@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: dev-fivem-game
-  name: dev-fivem-game
+    app: dev-fivem-deployment
+  name: dev-fivem-svc-a
   namespace: fivem
 spec:
   ports:
@@ -12,5 +12,5 @@ spec:
     protocol: UDP
     targetPort: 30120
   selector:
-    app: dev-fivem-workspace-001
+    app: dev-fivem-deployment
   type: ClusterIP
