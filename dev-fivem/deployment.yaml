@@ -16,9 +16,9 @@ spec:
         app: dev-fivem-workspace-001
     spec:
       volumes:
-      - name: dev-fivem-data
+      - name: dev-fivem-workspace-001
         persistentVolumeClaim:
-          claimName: dev-fivem-data
+          claimName: dev-fivem-workspace-001-data
       containers:
       - image: registry.apps.pushingstart.com/fivem-dev/baycity:latest
         name: dev-fivem-server
