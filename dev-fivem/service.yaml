@@ -19,6 +19,10 @@ spec:
     port: 40120
     protocol: TCP
     targetPort: 40120
+  - name: mariadb
+    port: 3306
+    protocol: TCP
+    targetPort: 3306
   selector:
     app: dev-fivem-deployment
   type: LoadBalancer
