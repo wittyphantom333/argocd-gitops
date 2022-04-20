@@ -17,4 +17,4 @@ spec:
     targetPort: 40120
   selector:
     app: dev-fivem-workspace-001
-  type: ClusterIP
+  type: LoadBalancer
