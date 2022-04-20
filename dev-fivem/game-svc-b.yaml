@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: dev-fivem-ns
-  name: dev-fivem-ns
+    app: dev-fivem-svc
+  name: dev-fivem-svc
   namespace: fivem
 spec:
   ports:
@@ -11,18 +11,10 @@ spec:
     port: 30120
     protocol: TCP
     targetPort: 30120
-  - name: fivem
-    port: 30120
-    protocol: UDP
-    targetPort: 30120
   - name: txadmin
     port: 40120
     protocol: TCP
     targetPort: 40120
-  - name: mariadb
-    port: 3306
-    protocol: TCP
-    targetPort: 3306
   selector:
-    app: dev-fivem-deployment
+    app: dev-fivem-workspace-001
   type: ClusterIP

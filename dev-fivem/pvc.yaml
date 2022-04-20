@@ -1,7 +1,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: dev-fivem-data
+  name: dev-fivem-workspace-001-data
   namespace: fivem
 spec:
   storageClassName: standard
