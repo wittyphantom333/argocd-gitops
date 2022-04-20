@@ -1,5 +1,9 @@
 {
     "cSpell.words": [
         "bungeecord"
-    ]
+    ],
+    "yaml.schemas": {
+        "https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json": "examples/**/*.yaml",
+        "https://json.schemastore.org/yamllint.json": "file:///Users/adamwitt/argocd-gitops/dev-fivem/deployment.yaml"
+    }
 }
