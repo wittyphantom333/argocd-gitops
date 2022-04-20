@@ -1,10 +1,10 @@
 apiVersion: v1
 data:
   server.cfg: |
-    mp_autoteambalance 1
-    mp_limitteams 1
-    writeid
-    writeip
+    sv_license 149E12A644AF93959C4EB19B34527431=
+    steam_key 149E12A644AF93959C4EB19B34527431=
+    sv_players 80
+    exec permissions.cfg
 kind: ConfigMap
 metadata:
   name: dev-fivem-configuration
