@@ -24,7 +24,7 @@ spec:
           name: dev-fivem-configuration
           items:
           - key: server.cfg
-            path: /opt/cfx-server-data/server.cfg
+            path: server.cfg
       containers:
       - image: registry.apps.pushingstart.com/fivem-dev/baycity:latest
         name: dev-fivem-server
