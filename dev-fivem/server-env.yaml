@@ -4,7 +4,7 @@ metadata:
   name: dev-fivem-env
   namespace: fivem
 data:
-  server.cfg: |
+  env: |
     - name: SERVER_PROFILE
       value: "default"
     - name: FIVEM_PORT
