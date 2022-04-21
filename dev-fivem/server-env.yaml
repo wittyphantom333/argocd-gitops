@@ -5,29 +5,16 @@ metadata:
   namespace: fivem
 data:
   env: |
-    - name: SERVER_PROFILE
-      value: "default"
-    - name: FIVEM_PORT
-      value: "30120"
-    - name: TXADMIN_PORT
-      value: "40120"
-    - name: HOST_UID
-      value: "1000"
-    - name: HOST_GID
-      value: "100"
-    - name: FIVEM_HOSTNAME
-      value: "dev-test-001"
-    - name: FIVEM_LICENCE_KEY
-      value: c4ziazm0kotquctybwy3ay54jkxcem8k
-    - name: STEAM_WEBAPIKEY
-      value: 149E12A644AF93959C4EB19B34527431
-    - name: DATABASE_SERVICE_NAME
-      value: 10.5.115.16
-    - name: MYSQL_DATABASE
-      value: fivem_db
-    - name: MYSQL_USER
-      value: fivem
-    - name: MYSQL_PASSWORD
-      value: Fordmustang13!
-    - name: TZ
-      value: America/Chicago
+    SERVER_PROFILE="default"
+    FIVEM_PORT="30120"
+    TXADMIN_PORT="40120"
+    HOST_UID="1000"
+    HOST_GID="100"
+    FIVEM_HOSTNAME="dev-test-001"
+    FIVEM_LICENCE_KEY='c4ziazm0kotquctybwy3ay54jkxcem8k'
+    STEAM_WEBAPIKEY='149E12A644AF93959C4EB19B34527431'
+    DATABASE_SERVICE_NAME='10.5.115.16'
+    MYSQL_DATABASE='fivem_db'
+    MYSQL_USER='fivem'
+    MYSQL_PASSWORD='Fordmustang13!'
+    TZ='America/Chicago'
