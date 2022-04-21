@@ -1,0 +1,172 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dev-fivem-configuration
+  namespace: fivem
+data:
+  server.cfg: >+
+    exec permissions.cfg
+
+
+    endpoint_add_tcp "0.0.0.0:30120"
+
+    endpoint_add_udp "0.0.0.0:30120"
+
+
+    set mysql_slow_query_warning 2000
+
+    set mysql_connection_string
+    "mysql://fivem:Fordmustang13!@localhost/fivem_db?waitForConnections=true&charset=utf8mb4"
+
+
+    #set voice numble radio
+
+    setr voice_use3dAudio true
+
+    setr voice_useSendingRangeOnly true
+
+
+
+    # FiveM Core Resources
+
+    start mapmanager
+
+    start spawnmanager
+
+    start sessionmanager
+
+    start fivem
+
+    #start hardcap
+
+    ensure ghmattimysql
+
+    ensure oxmysql
+
+    start debug
+
+    start baseevents
+
+    start chat
+
+    start qbcore
+
+    start connectqueue
+
+
+    exec resources.cfg
+
+
+    # tags
+
+    sets tags "default, seriousrp"
+
+
+    sets locale "en-US" 
+
+
+    # Banner
+
+    #sets banner_detail ""
+
+    #sets banner_connecting ""
+
+
+    # Set your server's hostname
+
+    sv_hostname "BayCity 3.5 Dev Insatnce 1"
+
+    sets sv_projectName "BayCity 3.5 Dev Insatnce 1"
+
+    sets sv_projectDesc "BayCity 3.5 Dev Insatnce 1"
+
+    sets locale "en-US"
+
+    sets tags "default, legacy, roleplay"
+
+    sv_scriptHookAllowed 0
+
+
+    # Nested configs!
+
+    #exec server_internal.cfg
+
+
+    # Loading a server icon (96x96 PNG file)
+
+    load_server_icon myLogo.png
+
+
+    # convars which can be used in scripts
+
+    set temp_convar "skrt"
+
+
+    # Uncomment this line if you do not want your server to be listed in the
+    server browser.
+
+    sv_master1 ""
+
+
+    # Add system admins
+
+    add_ace builtin.everyone cashcommands allow
+
+
+    #admin permissions
+
+    add_ace group.admin cashadmin allow # admin can do everything
+
+
+    add_ace group.admin cashadmin.join allow
+
+
+    add_ace group.admin command allow # allow all commands
+
+    #add_principal identifier.steam:11000011ca6afbd  group.admin # Coderc:
+
+
+    #Witt
+
+    add_principal identifier.discord:228696063899336715 group.admin
+
+    add_ace identifier.discord:228696063899336715 easyadmin allow
+
+    #blood
+
+    add_ace identifier.discord:253579504025337867 easyadmin allow
+
+    add_principal identifier.license:cffe87c14d85269584b878f79d822a2db9ff7fd1
+    group.admin
+
+
+
+    # Hide player endpoints in external log output.
+
+    sv_endpointprivacy true
+
+
+    # max clients
+
+    sv_maxclients 10
+
+
+    # License key for your server (https://keymaster.fivem.net)
+
+    set sv_licenseKey "c4ziazm0kotquctybwy3ay54jkxcem8k"
+
+
+    # Steam web api
+
+    set steam_webApiKey "149E12A644AF93959C4EB19B34527431"
+
+
+
+    exec resources/resources.cfg
+
+
+
+    restart ghmattimysql
+
+    exec wp_admin_permissions.cfg
+
