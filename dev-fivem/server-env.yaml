@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: dev-fivem-env
-  namespace: fivem
+  namespace: dev-fivem
 data:
   env: |
     SERVER_PROFILE="default"

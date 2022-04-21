@@ -2,7 +2,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: dev-fivem-data
-  namespace: fivem
+  namespace: dev-fivem
 spec:
   storageClassName: standard
   accessModes:

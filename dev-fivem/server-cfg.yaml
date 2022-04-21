@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: dev-fivem-configuration
-  namespace: fivem
+  namespace: dev-fivem
 data:
   server.cfg: >+
     exec permissions.cfg

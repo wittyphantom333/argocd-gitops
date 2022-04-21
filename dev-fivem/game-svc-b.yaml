@@ -4,7 +4,7 @@ metadata:
   labels:
     app: dev-fivem-deployment
   name: dev-fivem-svc-b
-  namespace: fivem
+  namespace: dev-fivem
 spec:
   ports:
   - name: fivem

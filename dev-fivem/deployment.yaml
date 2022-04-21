@@ -4,7 +4,7 @@ metadata:
   labels:
     app: dev-fivem-deployment
   name: dev-fivem-deployment
-  namespace: fivem
+  namespace: dev-fivem
 spec:
   replicas: 1
   selector:
