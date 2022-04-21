@@ -35,6 +35,9 @@ spec:
           limits:
             memory: 4Gi
             cpu: 2048m
+        envFrom:
+        - configMapRef:
+            name: dev-fivem-env
         ports:
         - containerPort: 30120
           protocol: TCP 
