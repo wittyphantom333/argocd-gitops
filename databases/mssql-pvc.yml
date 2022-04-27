@@ -1,0 +1,12 @@
+kind: PersistentVolumeClaim 
+apiVersion: v1 
+metadata: 
+  name: mssql-data 
+  namespace: databases 
+spec: 
+  accessModes: 
+  - ReadWriteOnce 
+  storageClassName: standard
+  resources: 
+    requests: 
+      storage: 100Gi 

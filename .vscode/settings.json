@@ -4,6 +4,7 @@
     ],
     "yaml.schemas": {
         "https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json": "examples/**/*.yaml",
-        "https://json.schemastore.org/yamllint.json": "file:///Users/adamwitt/argocd-gitops/dev-fivem/deployment.yaml"
+        "https://json.schemastore.org/yamllint.json": "file:///Users/adamwitt/argocd-gitops/dev-fivem/deployment.yaml",
+        "kubernetes://schema/apps/v1@deployment": "file:///Users/adamwitt/argocd-gitops/fosscord/server-deploy.yaml"
     }
 }
