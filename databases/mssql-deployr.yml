@@ -4,7 +4,7 @@ metadata:
   name: mssql-deployment 
   namespace: databases 
 spec: 
-  replicas: 2 
+  replicas: 1
   selector: 
      matchLabels: 
        app: mssql 
