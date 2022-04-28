@@ -2,31 +2,26 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: dev-fivem-deployment
-  name: dev-fivem-deployment
+    app: ${APP_NAME}
+  name: ${APP_NAME}
+  namespace: ${NAME_SPACE}
 spec:
-  replicas: 1
+  replicas: 4
   selector:
     matchLabels:
-      app: dev-fivem-deployment
+      app: ${APP_NAME}
   template:
     metadata:
       labels:
-        app: dev-fivem-deployment
+        app: ${APP_NAME}
     spec:
       volumes:
-      - name: dev-fivem-data
+      - name: ${APP_NAME}-data
         persistentVolumeClaim:
-          claimName: dev-fivem-data
-      - name: dev-fivem-configuration-server-cfg
-        configMap:
-          name: dev-fivem-configuration
-          items:
-          - key: server.cfg
-            path: server.cfg
+          claimName: ${APP_NAME}-data
       containers:
-      - image: registry.apps.pushingstart.com/kube-fivem/devSpace:latest
-        name: dev-fivem-server
+      - image: registry.apps.pushingstart.com/microsoft/vsts-agent:latest
+        name: ${APP_NAME}-01
         resources:
           requests:
             memory: 1Gi

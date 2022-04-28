@@ -1,7 +1,8 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: dev-fivem-data
+  name: ${APP_NAME}-data
+  namespace: ${NAME_SPACE}
 spec:
   storageClassName: standard
   accessModes:

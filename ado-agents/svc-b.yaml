@@ -2,14 +2,15 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: dev-fivem-deployment
-  name: dev-fivem-svc-a
+    app: ${APP_NAME}-deployment
+  name: ${APP_NAME}-svc-a
+  namespace: ${NAME_SPACE}
 spec:
   ports:
   - name: fivem
-    port: 30120
+    port: ${FIVEM_PORT}
     protocol: UDP
     targetPort: 30120
   selector:
-    app: dev-fivem-deployment
+    app: ${APP_NAME}-deployment
   type: ClusterIP
