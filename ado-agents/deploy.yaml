@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: dev-fivem-deployment
+  name: dev-fivem-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dev-fivem-deployment
+  template:
+    metadata:
+      labels:
+        app: dev-fivem-deployment
+    spec:
+      volumes:
+      - name: dev-fivem-data
+        persistentVolumeClaim:
+          claimName: dev-fivem-data
+      - name: dev-fivem-configuration-server-cfg
+        configMap:
+          name: dev-fivem-configuration
+          items:
+          - key: server.cfg
+            path: server.cfg
+      containers:
+      - image: registry.apps.pushingstart.com/kube-fivem/devSpace:latest
+        name: dev-fivem-server
+        resources:
+          requests:
+            memory: 1Gi
+            cpu: 256m
+            ephemeral-storage: "1Gi"
+          limits:
+            memory: 8Gi
+            cpu: 2048m
+            ephemeral-storage: "2Gi"
+        ports:
+        - containerPort: 30120
+          protocol: TCP 
+        - containerPort: 30120
+          protocol: UDP 
