@@ -13,7 +13,7 @@ spec:
       elasticsearch:
         hosts: ["elasticsearch-es-http:9200"]
         username: elastic
-        password: "zR4775Ol4AKD5MQ2LlFCa360"
+        password: "aH66NfO3sc0a9YC8oe8jS288"
         protocol: "https"
         ssl.certificate_authorities: ["/usr/share/apm-server/config/elasticsearch-ca/tls.crt"]
     rum:
