@@ -9,4 +9,5 @@ subjects:
 roleRef:
   kind: ClusterRole
   name: elastic-agent
+  namespace: logging
   apiGroup: rbac.authorization.k8s.io
