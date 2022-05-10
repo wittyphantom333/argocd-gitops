@@ -2,6 +2,7 @@ apiVersion: agent.k8s.elastic.co/v1alpha1
 kind: Agent
 metadata:
   name: fleet-server
+  namespace: logging
 spec:
   version: 8.1.2
   kibanaRef:
