@@ -21,8 +21,8 @@ spec:
             memory: 256Mi
             cpu: 250m
           limits:
-            memory: 512Mi
-            cpu: 500m
+            memory: 1024Mi
+            cpu: 1000m
   config:
     monitoring.ui.ccs.enabled: false
     xpack.fleet.agents.elasticsearch.hosts: ["https://elasticsearch-es-http.logging.svc:9200"]
