@@ -21,10 +21,10 @@ spec:
         resources:
           requests:
             memory: 1Gi
-            cpu: 1
+            cpu: 0.25
           limits:
             memory: 2Gi
-            cpu: 2
+            cpu: 1
         env:
         - name: JAVA_OPTS
           value: -Xms2000m -Xmx2000m  
