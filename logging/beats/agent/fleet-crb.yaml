@@ -5,7 +5,7 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: fleet-server
-  namespace: logging
+  namespace: default
 roleRef:
   kind: ClusterRole
   name: fleet-server
