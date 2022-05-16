@@ -4,7 +4,7 @@ metadata:
   name: enterprise-search 
 spec:
   version: 8.1.2
-  count: 3
+  count: 1
   elasticsearchRef:
     name: elasticsearch
   config:
@@ -20,12 +20,12 @@ spec:
       - name: enterprise-search
         resources:
           requests:
-            memory: 4Gi
+            memory: 1Gi
             cpu: 1
           limits:
-            memory: 4Gi
+            memory: 2Gi
             cpu: 2
         env:
         - name: JAVA_OPTS
-          value: -Xms3500m -Xmx3500m  
+          value: -Xms2000m -Xmx2000m  
     
