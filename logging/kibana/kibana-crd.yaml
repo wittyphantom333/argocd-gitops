@@ -19,10 +19,10 @@ spec:
         resources:
           requests:
             memory: 256Mi
-            cpu: 250m
+            cpu: 2
           limits:
             memory: 1024Mi
-            cpu: 1000m
+            cpu: 4
   config:
     monitoring.ui.ccs.enabled: false
     xpack.fleet.agents.elasticsearch.hosts: ["https://elasticsearch-es-http.logging.svc:9200"]
