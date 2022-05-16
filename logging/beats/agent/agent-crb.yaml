@@ -5,7 +5,7 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: elastic-agent
-  namespace: logging
+  namespace: default
 roleRef:
   kind: ClusterRole
   name: elastic-agent
