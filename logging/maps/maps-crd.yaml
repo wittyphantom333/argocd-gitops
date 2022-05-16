@@ -21,4 +21,4 @@ spec:
   count: 3
   elasticsearchRef:
     name: elasticsearch
-    namespace: logging
+    namespace: default
