@@ -20,11 +20,11 @@ spec:
       - name: enterprise-search
         resources:
           requests:
-            memory: 1Gi
+            memory: 128Mi
             cpu: 0.25
           limits:
-            memory: 2Gi
-            cpu: 1
+            memory: 1Gi
+            cpu: 0.50
         env:
         - name: JAVA_OPTS
           value: -Xms2000m -Xmx2000m  
