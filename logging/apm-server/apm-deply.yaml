@@ -12,9 +12,7 @@ spec:
       elasticsearch:
         hosts: ["https://elasticsearch-es-http.default.svc:9200"]
         username: elastic
-        exisitingSecret: elasticsearch-es-elastic-user
-        exisitingSecretKey: elastic
-        password: elastic
+        password: "49LNRE9O33BlVF8DX4V9s43C"
         protocol: "https"
         ssl.certificate_authorities: ["/usr/share/apm-server/config/elasticsearch-ca/tls.crt"]
     rum:
