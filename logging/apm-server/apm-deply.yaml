@@ -44,11 +44,11 @@ spec:
           readOnly: true
         resources:
           requests:
-            memory: 512Gi
+            memory: 128Mi
             cpu: 0.25
           limits:
-            memory: 1Gi
-            cpu: 1
+            memory: 512Mi
+            cpu: 0.50
       volumes:
       - name: elasticsearch-ca
         secret:
