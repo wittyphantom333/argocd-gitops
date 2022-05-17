@@ -25,8 +25,8 @@ spec:
             cpu: 1
   config:
     monitoring.ui.ccs.enabled: false
-    xpack.fleet.agents.elasticsearch.hosts: ["https://elasticsearch-es-http.logging.svc:9200"]
-    xpack.fleet.agents.fleet_server.hosts: ["https://fleet-server-agent-http.logging.svc:8220"]
+    xpack.fleet.agents.elasticsearch.hosts: ["https://elasticsearch-es-http.default.svc:9200"]
+    xpack.fleet.agents.fleet_server.hosts: ["https://fleet-server-agent-http.default.svc:8220"]
     xpack.reporting.roles.enabled: false
     xpack.fleet.packages:
     - name: system
