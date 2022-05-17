@@ -18,7 +18,7 @@ spec:
           limits:
             memory: 2Gi
             cpu: 2
-  count: 3
+  count: 1
   elasticsearchRef:
     name: elasticsearch
     namespace: default
