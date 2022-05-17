@@ -18,12 +18,3 @@ spec:
         automountServiceAccountToken: true
         securityContext:
           runAsUser: 0
-        containers:
-        - name: fleet-agent
-          resources:
-            requests:
-              memory: 128Mi
-              cpu: 0.50
-            limits:
-              memory: 256Mi
-              cpu: 1
