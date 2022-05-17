@@ -13,11 +13,11 @@ spec:
             value: "--max-old-space-size=980"
         resources:
           requests:
-            memory: 2Gi
-            cpu: 2
+            memory: 1Gi
+            cpu: 0.25
           limits:
             memory: 2Gi
-            cpu: 2  
+            cpu: 2
   count: 3
   elasticsearchRef:
     name: elasticsearch
