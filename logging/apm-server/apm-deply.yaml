@@ -42,6 +42,13 @@ spec:
         - mountPath: /usr/share/apm-server/config/elasticsearch-ca
           name: elasticsearch-ca
           readOnly: true
+        resources:
+          requests:
+            memory: 512Gi
+            cpu: 0.25
+          limits:
+            memory: 1Gi
+            cpu: 1
       volumes:
       - name: elasticsearch-ca
         secret:
