@@ -10,7 +10,7 @@ spec:
   config:
     output:
       elasticsearch:
-        hosts: ["https://elasticsearch-es-http.default.svc:9200"]
+        hosts: ["https://elasticsearch-es-http.elastic.svc:9200"]
         username: elastic
         password: "6HBQOf4pE47wYMN255048UOF"
         protocol: "https"
